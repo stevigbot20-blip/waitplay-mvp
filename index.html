@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WaitPlay — Play while you wait</title>
+  <meta name="description" content="WaitPlay is a monetization-ready starter hub for quick micro games people can play while they wait." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <div class="logo">WaitPlay</div>
+      <nav>
+        <a href="#games">Games</a>
+        <a href="#monetize">Monetize</a>
+        <a href="#newsletter">Newsletter</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Micro game starter</p>
+          <h1>Play while you wait.</h1>
+          <p class="subtitle">
+            Keep users engaged with instant mini games during checkout, loading, or downtime — with built-in monetization placeholders.
+          </p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#games" data-track="cta_browse_games">Browse games</a>
+            <a class="btn ghost" href="#newsletter" data-track="cta_join_waitlist">Join waitlist</a>
+            <a class="btn ghost" href="#sponsor" data-track="cta_sponsor_pilot_click">Become a Sponsor (Pilot $99)</a>
+          </div>
+          <p class="section-sub">Want measurable exposure? Try a WaitPlay Sponsor Pilot — $99, 30 days, tracked clicks.</p>
+        </div>
+        <div class="hero-card">
+          <h3>Why WaitPlay?</h3>
+          <ul>
+            <li>⚡ Fast static setup (HTML/CSS/JS)</li>
+            <li>📈 Event hooks ready for analytics wiring</li>
+            <li>💸 Ad + premium monetization blocks included</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="games" class="section">
+      <div class="container">
+        <h2>Mini apps</h2>
+        <p class="section-sub">Plug existing mini-games into one conversion-focused hub.</p>
+        <div id="apps-grid" class="grid"></div>
+      </div>
+    </section>
+
+    <section id="monetize" class="section alt">
+      <div class="container">
+        <h2>Monetization</h2>
+        <p class="section-sub">Starter placement ideas to validate revenue quickly. Sponsor pilot: $99 for 30 days (limited slots).</p>
+        <div class="monetize-grid">
+          <article class="card">
+            <h3>Ad Slot A</h3>
+            <div class="ad-placeholder">728 × 90 leaderboard placeholder</div>
+          </article>
+          <article class="card">
+            <h3>Ad Slot B</h3>
+            <div class="ad-placeholder">300 × 250 rectangle placeholder</div>
+          </article>
+          <article class="card premium">
+            <h3>Premium Themes</h3>
+            <p>Offer ad-free play + custom themes as a monthly upgrade.</p>
+            <button class="btn primary" id="premiumCta" data-track="premium_mock_cta_click">Mock upgrade CTA</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="sponsor" class="section">
+      <div class="container narrow">
+        <h2>Sponsor WaitPlay</h2>
+        <p class="section-sub">Run a low-risk 30-day sponsor test for $99. Get placement in the WaitPlay widget plus weekly performance stats.</p>
+        <p>Email stevigbot2.0@gmail.com to start.</p>
+      </div>
+    </section>
+
+    <section id="newsletter" class="section">
+      <div class="container narrow">
+        <h2>Get launch updates</h2>
+        <p class="section-sub">Frontend placeholder only. Emails are stored locally for demo purposes.</p>
+        <form id="emailForm" class="email-form" novalidate>
+          <label for="email">Email</label>
+          <div class="email-row">
+            <input id="email" name="email" type="email" placeholder="you@example.com" required />
+            <button class="btn primary" type="submit" data-track="email_submit">Notify me</button>
+          </div>
+          <p id="formMsg" class="form-msg" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <small>© <span id="year"></span> WaitPlay MVP · Sponsorship inquiries: stevigbot2.0@gmail.com</small>
+      <div>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    window.WAITPLAY_APP_FLAGS = {
+      easyMiniAppExists: true,
+      betterMiniGameExists: true
+    };
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
