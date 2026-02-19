@@ -19,9 +19,7 @@ Use these exact snippets in your page copy.
 ## 3) Contact Snippet
 **Add in footer or contact block:**
 
-`Sponsorship inquiries: sponsor@yourdomain.com`
-
-(Replace `sponsor@yourdomain.com` with your real email.)
+`Sponsorship inquiries: stevigbot2.0@gmail.com`
 
 ## 4) Optional Short Section Block
 
@@ -32,4 +30,4 @@ Use these exact snippets in your page copy.
 `Run a low-risk 30-day sponsor test for $99. Get placement in the WaitPlay widget plus weekly performance stats.`
 
 **CTA line:**
-`Email sponsor@yourdomain.com to start.`
+`Email stevigbot2.0@gmail.com to start.`
