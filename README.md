@@ -1,63 +1,34 @@
 # WaitPlay MVP
 
-A static, responsive MVP website for a **"Play while you wait"** micro-games hub, designed as a monetization-ready starter.
+Simple landing page + playable mini-games for quick validation.
 
-## Included
+## Live
+- Vercel: https://waitplay-mvp.vercel.app/
+- GitHub Pages: https://stevigbot20-blip.github.io/waitplay-mvp/
 
-- Hero + positioning for quick-play waiting moments
-- Mini-app cards linking to local apps when present:
-  - `../easy-mini-app/`
-  - `../better-mini-game/`
-- Email capture UI (frontend-only demo using `localStorage`)
-- Simple analytics-friendly event hooks (`console.log` wrapper)
-- Monetization section:
-  - Ad placeholder blocks
-  - Premium themes mock CTA
-- Legal stubs:
-  - `privacy.html`
-  - `terms.html`
+## What is real right now
+- Landing page with sponsor offer CTA
+- Mini-games linked from landing page:
+  - `/apps/easy-mini-app/` (Tap Sprint with 30s/60s timed goal)
+  - `/apps/better-mini-game/`
+- Basic click tracking via `console.log`
+- Newsletter form opens a pre-filled email subscription request
 
 ## Project structure
+- `index.html`, `styles.css`, `script.js` - landing page
+- `apps/easy-mini-app/*` - timed tap game
+- `apps/better-mini-game/*` - second game
+- `privacy.html`, `terms.html`
 
-- `index.html` — main landing page
-- `styles.css` — responsive styling
-- `script.js` — rendering, tracking hooks, localStorage form logic
-- `privacy.html` — privacy stub
-- `terms.html` — terms stub
-
-## Run locally (Host Ubuntu terminal)
-
-From the host Ubuntu terminal:
-
+## Local run
 ```bash
 cd /home/node/.openclaw/workspace/waitplay-mvp
 python3 -m http.server 8080
 ```
+Then open `http://localhost:8080`.
 
-Open:
-
-- `http://localhost:8080`
-
-## Quick deploy options
-
-### GitHub Pages
-
-1. Push this folder to a GitHub repo.
-2. In GitHub: **Settings → Pages**.
-3. Source: **Deploy from branch**.
-4. Choose `main` branch and `/ (root)`.
-5. Save; wait for deployment URL.
-
-### Netlify (drag & drop)
-
-1. Go to Netlify dashboard.
-2. Use **Add new site → Deploy manually**.
-3. Drag this folder (or zip contents).
-4. Netlify provides a live URL instantly.
-
-## Notes for production
-
-- Replace localStorage email capture with a real backend/API.
-- Swap ad placeholders for ad-network tags.
-- Wire `track()` events to your analytics endpoint/provider.
-- Replace legal stubs with finalized policy and terms.
+## Deploy
+```bash
+vercel --prod
+```
+or push to GitHub Pages repo/branch.

@@ -64,22 +64,11 @@ function bindEmailCapture() {
       return;
     }
 
-    const existing = JSON.parse(localStorage.getItem('waitplay_emails') || '[]');
-    const updated = Array.from(new Set([...existing, email.toLowerCase()]));
-    localStorage.setItem('waitplay_emails', JSON.stringify(updated));
-
-    msg.textContent = 'Saved locally (demo). Backend integration needed for production.';
-    input.value = '';
-    track('email_submit_success', { listSize: updated.length });
-  });
-}
-
-function bindPremiumMock() {
-  const btn = document.getElementById('premiumCta');
-  if (!btn) return;
-  btn.addEventListener('click', () => {
-    alert('Mock CTA: connect this button to Stripe/checkout in production.');
-    track('premium_cta_mock_opened');
+    const subject = encodeURIComponent('WaitPlay newsletter signup');
+    const body = encodeURIComponent(`Please add me to WaitPlay updates: ${email}`);
+    window.location.href = `mailto:stevigbot2.0@gmail.com?subject=${subject}&body=${body}`;
+    msg.textContent = 'Opened your mail app to confirm subscription.';
+    track('email_submit_mailto_opened', { emailDomain: email.split('@')[1] || '' });
   });
 }
 
@@ -87,7 +76,6 @@ function init() {
   renderApps();
   bindTracking();
   bindEmailCapture();
-  bindPremiumMock();
   document.getElementById('year').textContent = String(new Date().getFullYear());
   track('page_view', { page: 'home' });
 }

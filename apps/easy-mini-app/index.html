@@ -3,21 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tap Counter</title>
+    <title>Tap Sprint</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <main class="app" aria-live="polite">
-      <h1>Tap Counter</h1>
+      <h1>Tap Sprint</h1>
+      <p class="sub">Pick a timer and beat the goal.</p>
+
+      <section class="controls" aria-label="Game settings">
+        <label for="modeSelect">Round length</label>
+        <select id="modeSelect">
+          <option value="30">30 seconds (goal: 60 taps)</option>
+          <option value="60">60 seconds (goal: 120 taps)</option>
+        </select>
+      </section>
 
       <section class="scores">
         <p class="score-label">Score</p>
         <p id="score" class="score" aria-label="Current score">0</p>
         <p class="best">Best: <span id="bestScore">0</span></p>
+        <p class="goal">Goal: <span id="goalScore">60</span></p>
+        <p class="timer">Time left: <span id="timeLeft">30</span>s</p>
+        <p id="status" class="status">Press Start to begin.</p>
       </section>
 
-      <button id="tapButton" class="tap-btn" type="button">Tap!</button>
-      <button id="resetButton" class="reset-btn" type="button">Reset Score</button>
+      <button id="startButton" class="tap-btn" type="button">Start Round</button>
+      <button id="tapButton" class="tap-btn" type="button" disabled>Tap!</button>
+      <button id="resetButton" class="reset-btn" type="button">Reset Best</button>
     </main>
 
     <script src="script.js"></script>
