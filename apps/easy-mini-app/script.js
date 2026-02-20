@@ -88,20 +88,13 @@
     setTimeout(() => banner.remove(), 2200);
   };
 
-  const finishRound = ({ won = false } = {}) => {
+  const finishRound = () => {
     running = false;
     clearInterval(timer);
     timer = null;
 
     const goal = selectedGoal();
-    if (won || score >= goal) {
-      level += 1;
-      saveLevel();
-      statusEl.textContent = `🏆 WIN. ${score}/${goal}. Level up → ${level}. Next round is harder.`;
-      celebrateWin(goal);
-    } else {
-      statusEl.textContent = `⏱️ Time up. ${score}/${goal} — try again (level ${level}).`;
-    }
+    statusEl.textContent = `⏱️ Time up. ${score} taps. You reached level ${level} (next goal ${goal}).`;
 
     if (score > best) {
       best = score;
@@ -130,10 +123,13 @@
     if (!running) return;
     score += 1;
 
-    const goal = selectedGoal();
-    if (score >= goal) {
-      finishRound({ won: true });
-      return;
+    // Keep the round going: each reached goal levels up immediately.
+    while (score >= selectedGoal()) {
+      const hitGoal = selectedGoal();
+      level += 1;
+      saveLevel();
+      statusEl.textContent = `🔥 Level up! Cleared ${hitGoal}. New goal: ${selectedGoal()}. Keep going!`;
+      celebrateWin(hitGoal);
     }
 
     render();
