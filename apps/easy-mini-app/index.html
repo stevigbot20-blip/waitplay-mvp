@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tap Counter</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app" aria-live="polite">
+      <h1>Tap Counter</h1>
+
+      <section class="scores">
+        <p class="score-label">Score</p>
+        <p id="score" class="score" aria-label="Current score">0</p>
+        <p class="best">Best: <span id="bestScore">0</span></p>
+      </section>
+
+      <button id="tapButton" class="tap-btn" type="button">Tap!</button>
+      <button id="resetButton" class="reset-btn" type="button">Reset Score</button>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

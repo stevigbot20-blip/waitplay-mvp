@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Whack-a-Dot</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app" aria-live="polite">
+    <header class="topbar">
+      <h1>🎯 Whack-a-Dot</h1>
+      <p class="subtitle">Hit the moving dot before time runs out!</p>
+    </header>
+
+    <section class="hud" aria-label="Game stats">
+      <div class="stat"><span>⏱ Time</span><strong id="time">30.0s</strong></div>
+      <div class="stat"><span>⭐ Score</span><strong id="score">0</strong></div>
+      <div class="stat"><span>🔥 Combo</span><strong id="combo">x1</strong></div>
+      <div class="stat"><span>🏆 Best</span><strong id="best">0</strong></div>
+    </section>
+
+    <section id="arena" class="arena" tabindex="0" aria-label="Game arena. Click or tap the dot. Press Space to whack when dot is near center.">
+      <button id="dot" class="dot" aria-label="Target dot"></button>
+      <div id="overlay" class="overlay show">
+        <div class="card">
+          <h2 id="overlayTitle">Ready?</h2>
+          <p id="overlayText">Click <b>Start</b> and whack as many dots as possible in 30 seconds.</p>
+          <button id="startBtn" class="btn">Start Game</button>
+          <p class="tip">Tip: Misses cost points. Build combo for multipliers. Keyboard: <kbd>Space</kbd> to attempt hit.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="controls">
+      <button id="restartBtn" class="btn ghost" disabled>Restart</button>
+      <p>Hit: <span id="hits">0</span> · Miss: <span id="misses">0</span> · Accuracy: <span id="accuracy">0%</span></p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

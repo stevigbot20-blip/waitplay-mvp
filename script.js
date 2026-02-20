@@ -8,14 +8,14 @@ const apps = [
     id: 'easy-mini-app',
     title: 'Easy Mini App',
     description: 'Quick, lightweight mini app experience.',
-    url: '../easy-mini-app/',
+    url: './apps/easy-mini-app/',
     exists: Boolean(window.WAITPLAY_APP_FLAGS?.easyMiniAppExists)
   },
   {
     id: 'better-mini-game',
     title: 'Better Mini Game',
     description: 'A richer mini-game for longer wait sessions.',
-    url: '../better-mini-game/',
+    url: './apps/better-mini-game/',
     exists: Boolean(window.WAITPLAY_APP_FLAGS?.betterMiniGameExists)
   }
 ];
