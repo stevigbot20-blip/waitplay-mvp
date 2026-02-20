@@ -69,8 +69,21 @@
       <div class="win-banner-sub">You kicked its ass.</div>
     `;
 
+    const modal = document.createElement("div");
+    modal.className = "win-modal";
+    modal.innerHTML = `
+      <div class="win-modal-card">
+        <div class="win-modal-title">🏆 YOU WON</div>
+        <div class="win-modal-text">${score} taps in ${selectedSeconds()}s</div>
+        <div class="win-modal-text">Goal was ${goal}. Next level unlocked.</div>
+        <button class="win-modal-btn" type="button">Hell yeah</button>
+      </div>
+    `;
+    modal.querySelector("button").addEventListener("click", () => modal.remove());
+
     document.body.appendChild(burst);
     document.body.appendChild(banner);
+    document.body.appendChild(modal);
     setTimeout(() => burst.remove(), 1500);
     setTimeout(() => banner.remove(), 2200);
   };

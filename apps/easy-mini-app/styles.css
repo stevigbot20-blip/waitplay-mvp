@@ -129,3 +129,35 @@ body.win-flash {
 @keyframes bannerOut {
   to { opacity: 0; transform: translate(-50%, -10px); }
 }
+
+.win-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.45);
+  display: grid;
+  place-items: center;
+  z-index: 10001;
+}
+
+.win-modal-card {
+  width: min(360px, 90vw);
+  background: #111a37;
+  border: 1px solid #3b4c89;
+  border-radius: 14px;
+  padding: 1rem;
+  text-align: center;
+  color: #f2f4ff;
+}
+
+.win-modal-title { font-size: 1.25rem; font-weight: 900; margin-bottom: .4rem; }
+.win-modal-text { opacity: .95; margin: .25rem 0; }
+.win-modal-btn {
+  margin-top: .8rem;
+  border: 0;
+  border-radius: 10px;
+  padding: .6rem .9rem;
+  font-weight: 800;
+  cursor: pointer;
+  background: linear-gradient(120deg, #4a6cff, #22c55e);
+  color: white;
+}
