@@ -1,0 +1,206 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 100%);
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app {
+  width: 100%;
+  max-width: 480px;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.back-link {
+  display: inline-block;
+  color: #ffd93d;
+  text-decoration: none;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+h1 {
+  font-size: 1.8rem;
+  margin-bottom: 0.25rem;
+}
+
+.sub {
+  color: #a0a0a0;
+  margin-bottom: 1.5rem;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.stat-box {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.5rem;
+  border-radius: 8px;
+}
+
+.stat-box span {
+  display: block;
+  font-size: 0.65rem;
+  color: #a0a0a0;
+  text-transform: uppercase;
+}
+
+.stat-box strong {
+  font-size: 1.1rem;
+  color: #ffd93d;
+}
+
+.game-area {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 1.5rem;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.game-area.waiting {
+  background: linear-gradient(145deg, #dc3545, #c82333);
+  border-color: #dc3545;
+}
+
+.game-area.ready {
+  background: linear-gradient(145deg, #28a745, #218838);
+  border-color: #28a745;
+}
+
+.game-area.early {
+  background: linear-gradient(145deg, #ffc107, #e0a800);
+  border-color: #ffc107;
+}
+
+.target {
+  width: 120px;
+  height: 120px;
+  background: linear-gradient(145deg, #ffd93d, #ffec8b);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  animation: pulse 0.5s ease-in-out infinite;
+  box-shadow: 0 0 30px rgba(255, 217, 61, 0.5);
+}
+
+.target.hidden {
+  display: none;
+}
+
+.target span {
+  color: #1a1a3e;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.message {
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 1rem;
+}
+
+.history {
+  margin-bottom: 1.5rem;
+}
+
+.history h3 {
+  font-size: 0.9rem;
+  color: #a0a0a0;
+  margin-bottom: 0.5rem;
+}
+
+.history-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  justify-content: center;
+}
+
+.history-item {
+  background: rgba(255, 217, 61, 0.2);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  color: #ffd93d;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin: 0.25rem;
+}
+
+.btn.primary {
+  background: linear-gradient(145deg, #ffd93d, #ffec8b);
+  color: #1a1a3e;
+}
+
+.btn.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 217, 61, 0.4);
+}
+
+.btn.ghost {
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+}
+
+.btn.ghost:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.btn.hidden {
+  display: none;
+}
+
+@media (max-width: 480px) {
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .game-area {
+    height: 200px;
+  }
+  
+  .target {
+    width: 100px;
+    height: 100px;
+  }
+}

@@ -6,17 +6,31 @@ const track = (eventName, payload = {}) => {
 const apps = [
   {
     id: 'easy-mini-app',
-    title: 'Easy Mini App',
-    description: 'Quick, lightweight mini app experience.',
+    title: 'Tap Sprint',
+    description: 'Tap as fast as you can before time runs out!',
     url: './apps/easy-mini-app/',
     exists: Boolean(window.WAITPLAY_APP_FLAGS?.easyMiniAppExists)
   },
   {
     id: 'better-mini-game',
-    title: 'Better Mini Game',
-    description: 'A richer mini-game for longer wait sessions.',
+    title: 'Whack-a-Dot',
+    description: 'Hit moving dots to score points. Build combos for multipliers!',
     url: './apps/better-mini-game/',
     exists: Boolean(window.WAITPLAY_APP_FLAGS?.betterMiniGameExists)
+  },
+  {
+    id: 'memory-match',
+    title: '🧠 Memory Match',
+    description: 'Find all matching pairs in the fewest moves.',
+    url: './apps/memory-match/',
+    exists: true
+  },
+  {
+    id: 'reaction-test',
+    title: '⚡ Reaction Test',
+    description: 'Test your reflexes. How fast can you react?',
+    url: './apps/reaction-test/',
+    exists: true
   }
 ];
 

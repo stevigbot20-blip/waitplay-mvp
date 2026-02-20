@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reaction Test</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app" aria-live="polite">
+    <a class="back-link" href="../../index.html">← Back to WaitPlay</a>
+    <h1>⚡ Reaction Test</h1>
+    <p class="sub">How fast can you react?</p>
+
+    <section class="stats">
+      <div class="stat-box">
+        <span>Last</span>
+        <strong id="lastTime">-</strong>
+      </div>
+      <div class="stat-box">
+        <span>Best</span>
+        <strong id="bestTime">-</strong>
+      </div>
+      <div class="stat-box">
+        <span>Avg</span>
+        <strong id="avgTime">-</strong>
+      </div>
+      <div class="stat-box">
+        <span>Rounds</span>
+        <strong id="rounds">0</strong>
+      </div>
+    </section>
+
+    <div id="gameArea" class="game-area">
+      <div id="target" class="target hidden">
+        <span>CLICK!</span>
+      </div>
+      <p id="message" class="message">Click "Start" when you're ready</p>
+    </div>
+
+    <div class="history">
+      <h3>Recent Times</h3>
+      <div id="historyList" class="history-list"></div>
+    </div>
+
+    <button id="startBtn" class="btn primary">Start</button>
+    <button id="resetBtn" class="btn ghost">Reset Stats</button>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

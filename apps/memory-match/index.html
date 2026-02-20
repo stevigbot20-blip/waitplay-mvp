@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Memory Match</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app" aria-live="polite">
+    <a class="back-link" href="../../index.html">← Back to WaitPlay</a>
+    <h1>🧠 Memory Match</h1>
+    <p class="sub">Find all matching pairs in the fewest moves.</p>
+
+    <section class="controls" aria-label="Game settings">
+      <label for="difficulty">Difficulty</label>
+      <select id="difficulty">
+        <option value="4">Easy (4 pairs)</option>
+        <option value="6">Medium (6 pairs)</option>
+        <option value="8">Hard (8 pairs)</option>
+      </select>
+    </section>
+
+    <section class="stats">
+      <div class="stat-box">
+        <span>Moves</span>
+        <strong id="moves">0</strong>
+      </div>
+      <div class="stat-box">
+        <span>Pairs</span>
+        <strong id="pairs">0 / <span id="totalPairs">4</span></strong>
+      </div>
+      <div class="stat-box">
+        <span>Time</span>
+        <strong id="timer">0:00</strong>
+      </div>
+      <div class="stat-box">
+        <span>Best</span>
+        <strong id="bestMoves">-</strong>
+      </div>
+    </section>
+
+    <div id="gameBoard" class="game-board"></div>
+
+    <button id="newGame" class="btn primary">New Game</button>
+    
+    <div id="winOverlay" class="overlay hidden">
+      <div class="card">
+        <h2>🎉 You Won!</h2>
+        <p>Completed in <span id="finalMoves"></span> moves and <span id="finalTime"></span></p>
+        <button id="playAgain" class="btn primary">Play Again</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

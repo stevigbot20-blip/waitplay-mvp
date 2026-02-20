@@ -1,0 +1,211 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app {
+  width: 100%;
+  max-width: 480px;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.back-link {
+  display: inline-block;
+  color: #8be9fd;
+  text-decoration: none;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+h1 {
+  font-size: 1.8rem;
+  margin-bottom: 0.25rem;
+}
+
+.sub {
+  color: #a0a0a0;
+  margin-bottom: 1.5rem;
+}
+
+.controls {
+  margin-bottom: 1rem;
+}
+
+.controls label {
+  display: block;
+  color: #8be9fd;
+  margin-bottom: 0.25rem;
+  font-size: 0.85rem;
+}
+
+.controls select {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: none;
+  background: #2a2a4a;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.stat-box {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.5rem;
+  border-radius: 8px;
+}
+
+.stat-box span {
+  display: block;
+  font-size: 0.7rem;
+  color: #a0a0a0;
+  text-transform: uppercase;
+}
+
+.stat-box strong {
+  font-size: 1.2rem;
+  color: #8be9fd;
+}
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  perspective: 1000px;
+}
+
+.card {
+  aspect-ratio: 1;
+  cursor: pointer;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease;
+}
+
+.card.flipped {
+  transform: rotateY(180deg);
+}
+
+.card.matched {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backface-visibility: hidden;
+  font-size: 1.5rem;
+}
+
+.card-back {
+  background: linear-gradient(145deg, #5a5a8a, #3a3a6a);
+  border: 2px solid #4a4a7a;
+}
+
+.card-back::after {
+  content: "?";
+  font-size: 1.5rem;
+  color: #8be9fd;
+}
+
+.card-front {
+  background: linear-gradient(145deg, #8be9fd, #6be0f0);
+  transform: rotateY(180deg);
+  border: 2px solid #fff;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn.primary {
+  background: linear-gradient(145deg, #ff6b6b, #ff5252);
+  color: #fff;
+}
+
+.btn.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 107, 107, 0.4);
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.overlay.hidden {
+  display: none;
+}
+
+.overlay .card {
+  background: #2a2a4a;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  transform: none;
+  max-width: 300px;
+}
+
+.overlay .card h2 {
+  margin-bottom: 0.5rem;
+}
+
+.overlay .card p {
+  color: #a0a0a0;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 480px) {
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .game-board {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.35rem;
+  }
+  
+  .card-front,
+  .card-back {
+    font-size: 1.2rem;
+  }
+}
