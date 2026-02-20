@@ -53,7 +53,7 @@ function bindEmailCapture() {
 
   if (!form || !msg || !input) return;
 
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const email = input.value.trim();
     const valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -64,11 +64,31 @@ function bindEmailCapture() {
       return;
     }
 
-    const subject = encodeURIComponent('WaitPlay newsletter signup');
-    const body = encodeURIComponent(`Please add me to WaitPlay updates: ${email}`);
-    window.location.href = `mailto:stevigbot2.0@gmail.com?subject=${subject}&body=${body}`;
-    msg.textContent = 'Opened your mail app to confirm subscription.';
-    track('email_submit_mailto_opened', { emailDomain: email.split('@')[1] || '' });
+    msg.textContent = 'Submitting…';
+
+    try {
+      const res = await fetch('https://formsubmit.co/ajax/stevigbot2.0@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json'
+        },
+        body: JSON.stringify({
+          _subject: 'WaitPlay newsletter signup',
+          email,
+          source: 'waitplay-mvp'
+        })
+      });
+
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+      msg.textContent = 'Subscribed. Thank you!';
+      input.value = '';
+      track('email_submit_success', { emailDomain: email.split('@')[1] || '' });
+    } catch (err) {
+      msg.textContent = 'Submit failed. Try again in a moment.';
+      track('email_submit_error', { error: String(err) });
+    }
   });
 }
 
