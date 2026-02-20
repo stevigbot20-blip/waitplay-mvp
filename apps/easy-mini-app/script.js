@@ -28,7 +28,7 @@
   const selectedSeconds = () => Number.parseInt(modeSelect.value, 10);
   const selectedGoal = () => {
     const base = baseGoals[selectedSeconds()] ?? 60;
-    return Math.round(base * (1 + (level - 1) * 0.12));
+    return Math.round(base * Math.pow(1.15, level - 1));
   };
 
   const render = () => {
@@ -123,12 +123,14 @@
     if (!running) return;
     score += 1;
 
-    // Keep the round going: each reached goal levels up immediately.
-    while (score >= selectedGoal()) {
-      const hitGoal = selectedGoal();
+    // Keep the run going: on goal, start a fresh round score at 0.
+    const goal = selectedGoal();
+    if (score >= goal) {
+      const hitGoal = goal;
       level += 1;
       saveLevel();
-      statusEl.textContent = `🔥 Level up! Cleared ${hitGoal}. New goal: ${selectedGoal()}. Keep going!`;
+      score = 0;
+      statusEl.textContent = `🔥 Level up! Cleared ${hitGoal}. Score reset. New goal: ${selectedGoal()}. Keep going!`;
       celebrateWin(hitGoal);
     }
 
