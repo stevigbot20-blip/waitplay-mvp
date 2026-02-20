@@ -12,18 +12,24 @@
   const tapButton = document.getElementById("tapButton");
   const resetButton = document.getElementById("resetButton");
 
-  const goals = { 30: 60, 60: 120 };
+  const baseGoals = { 30: 60, 60: 120 };
+  const LEVEL_KEY = "tap-sprint-level";
 
   let score = 0;
   let timeLeft = 30;
   let best = Number.parseInt(localStorage.getItem(STORAGE_KEY), 10);
+  let level = Number.parseInt(localStorage.getItem(LEVEL_KEY), 10);
   let timer = null;
   let running = false;
 
   if (!Number.isFinite(best) || best < 0) best = 0;
+  if (!Number.isFinite(level) || level < 1) level = 1;
 
   const selectedSeconds = () => Number.parseInt(modeSelect.value, 10);
-  const selectedGoal = () => goals[selectedSeconds()] ?? 60;
+  const selectedGoal = () => {
+    const base = baseGoals[selectedSeconds()] ?? 60;
+    return Math.round(base * (1 + (level - 1) * 0.12));
+  };
 
   const render = () => {
     scoreEl.textContent = String(score);
@@ -36,6 +42,7 @@
   };
 
   const saveBest = () => localStorage.setItem(STORAGE_KEY, String(best));
+  const saveLevel = () => localStorage.setItem(LEVEL_KEY, String(level));
 
   const celebrateWin = () => {
     document.body.classList.add("win-flash");
@@ -64,10 +71,12 @@
 
     const goal = selectedGoal();
     if (score >= goal) {
-      statusEl.textContent = `🎉 Goal smashed! ${score}/${goal} — nice run.`;
+      level += 1;
+      saveLevel();
+      statusEl.textContent = `🎉 Goal smashed! ${score}/${goal}. Level up → ${level}. Next round is harder.`;
       celebrateWin();
     } else {
-      statusEl.textContent = `⏱️ Time up. ${score}/${goal} — try again.`;
+      statusEl.textContent = `⏱️ Time up. ${score}/${goal} — try again (current level ${level}).`;
     }
 
     if (score > best) {
@@ -81,7 +90,7 @@
     running = true;
     score = 0;
     timeLeft = selectedSeconds();
-    statusEl.textContent = "Go! Tap as fast as you can.";
+    statusEl.textContent = `Go! Level ${level} — hit ${selectedGoal()} taps.`;
     render();
 
     timer = setInterval(() => {
@@ -102,14 +111,16 @@
   modeSelect.addEventListener("change", () => {
     if (running) return;
     timeLeft = selectedSeconds();
-    statusEl.textContent = "Press Start to begin.";
+    statusEl.textContent = `Press Start to begin (level ${level}).`;
     render();
   });
 
   resetButton.addEventListener("click", () => {
     best = 0;
+    level = 1;
     saveBest();
-    statusEl.textContent = "Best score reset.";
+    saveLevel();
+    statusEl.textContent = "Best score + difficulty reset.";
     render();
   });
 
