@@ -43,6 +43,15 @@ body {
   box-shadow: 0 12px 30px #0000001f;
 }
 
+.back-link {
+  display: inline-block;
+  margin-bottom: .6rem;
+  color: #9fb4ff;
+  text-decoration: none;
+  font-weight: 700;
+}
+.back-link:hover { text-decoration: underline; }
+
 h1 { margin: 0; }
 .sub { margin: .4rem 0 1rem; color: var(--muted); }
 
