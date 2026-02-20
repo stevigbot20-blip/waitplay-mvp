@@ -37,6 +37,26 @@
 
   const saveBest = () => localStorage.setItem(STORAGE_KEY, String(best));
 
+  const celebrateWin = () => {
+    document.body.classList.add("win-flash");
+    setTimeout(() => document.body.classList.remove("win-flash"), 900);
+
+    if (navigator.vibrate) navigator.vibrate([120, 80, 120]);
+
+    const burst = document.createElement("div");
+    burst.className = "confetti-burst";
+    for (let i = 0; i < 28; i += 1) {
+      const piece = document.createElement("span");
+      piece.className = "confetti";
+      piece.style.left = `${Math.random() * 100}%`;
+      piece.style.animationDelay = `${Math.random() * 0.25}s`;
+      piece.style.background = ["#4a6cff", "#22c55e", "#f97316", "#eab308", "#ec4899"][i % 5];
+      burst.appendChild(piece);
+    }
+    document.body.appendChild(burst);
+    setTimeout(() => burst.remove(), 1400);
+  };
+
   const finishRound = () => {
     running = false;
     clearInterval(timer);
@@ -44,7 +64,8 @@
 
     const goal = selectedGoal();
     if (score >= goal) {
-      statusEl.textContent = `✅ You win! ${score}/${goal}`;
+      statusEl.textContent = `🎉 Goal smashed! ${score}/${goal} — nice run.`;
+      celebrateWin();
     } else {
       statusEl.textContent = `⏱️ Time up. ${score}/${goal} — try again.`;
     }

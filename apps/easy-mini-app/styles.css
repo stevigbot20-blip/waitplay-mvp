@@ -68,3 +68,37 @@ h1 { margin: 0; }
 .tap-btn:disabled { opacity: .55; cursor: not-allowed; }
 .reset-btn { margin-top: 0.75rem; background: var(--reset); color: var(--text); }
 button:focus-visible, select:focus-visible { outline: 3px solid #88a2ff; outline-offset: 2px; }
+
+body.win-flash {
+  animation: winFlash .9s ease;
+}
+
+@keyframes winFlash {
+  0% { filter: brightness(1); }
+  35% { filter: brightness(1.25); }
+  100% { filter: brightness(1); }
+}
+
+.confetti-burst {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 9999;
+}
+
+.confetti {
+  position: absolute;
+  top: -16px;
+  width: 9px;
+  height: 14px;
+  border-radius: 2px;
+  animation: drop 1.2s ease-in forwards;
+}
+
+@keyframes drop {
+  to {
+    transform: translateY(110vh) rotate(720deg);
+    opacity: 0.9;
+  }
+}
