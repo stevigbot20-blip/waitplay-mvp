@@ -102,3 +102,30 @@ body.win-flash {
     opacity: 0.9;
   }
 }
+
+.win-banner {
+  position: fixed;
+  left: 50%;
+  top: 14%;
+  transform: translateX(-50%);
+  background: linear-gradient(120deg, #4a6cff, #22c55e);
+  color: white;
+  border-radius: 14px;
+  padding: 0.8rem 1rem;
+  text-align: center;
+  box-shadow: 0 12px 32px #00000055;
+  z-index: 10000;
+  animation: bannerIn .25s ease, bannerOut .25s ease 1.9s forwards;
+}
+
+.win-banner-main { font-weight: 900; letter-spacing: .3px; }
+.win-banner-sub { font-size: .9rem; opacity: .95; }
+
+@keyframes bannerIn {
+  from { opacity: 0; transform: translate(-50%, -10px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}
+
+@keyframes bannerOut {
+  to { opacity: 0; transform: translate(-50%, -10px); }
+}

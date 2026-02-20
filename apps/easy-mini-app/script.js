@@ -1,5 +1,6 @@
 (() => {
   const STORAGE_KEY = "tap-sprint-best";
+  const LEVEL_KEY = "tap-sprint-level";
 
   const scoreEl = document.getElementById("score");
   const bestEl = document.getElementById("bestScore");
@@ -13,7 +14,6 @@
   const resetButton = document.getElementById("resetButton");
 
   const baseGoals = { 30: 60, 60: 120 };
-  const LEVEL_KEY = "tap-sprint-level";
 
   let score = 0;
   let timeLeft = 30;
@@ -44,39 +44,50 @@
   const saveBest = () => localStorage.setItem(STORAGE_KEY, String(best));
   const saveLevel = () => localStorage.setItem(LEVEL_KEY, String(level));
 
-  const celebrateWin = () => {
+  const celebrateWin = (goal) => {
     document.body.classList.add("win-flash");
     setTimeout(() => document.body.classList.remove("win-flash"), 900);
 
-    if (navigator.vibrate) navigator.vibrate([120, 80, 120]);
+    if (navigator.vibrate) navigator.vibrate([120, 80, 120, 80, 180]);
 
     const burst = document.createElement("div");
     burst.className = "confetti-burst";
-    for (let i = 0; i < 28; i += 1) {
+    for (let i = 0; i < 36; i += 1) {
       const piece = document.createElement("span");
       piece.className = "confetti";
       piece.style.left = `${Math.random() * 100}%`;
-      piece.style.animationDelay = `${Math.random() * 0.25}s`;
+      piece.style.animationDelay = `${Math.random() * 0.3}s`;
       piece.style.background = ["#4a6cff", "#22c55e", "#f97316", "#eab308", "#ec4899"][i % 5];
       burst.appendChild(piece);
     }
+
+    const banner = document.createElement("div");
+    banner.className = "win-banner";
+    banner.innerHTML = `
+      <div class="win-banner-main">🏆 GOAL CRUSHED</div>
+      <div class="win-banner-sub">${score} taps in ${selectedSeconds()}s (goal ${goal})</div>
+      <div class="win-banner-sub">You kicked its ass.</div>
+    `;
+
     document.body.appendChild(burst);
-    setTimeout(() => burst.remove(), 1400);
+    document.body.appendChild(banner);
+    setTimeout(() => burst.remove(), 1500);
+    setTimeout(() => banner.remove(), 2200);
   };
 
-  const finishRound = () => {
+  const finishRound = ({ won = false } = {}) => {
     running = false;
     clearInterval(timer);
     timer = null;
 
     const goal = selectedGoal();
-    if (score >= goal) {
+    if (won || score >= goal) {
       level += 1;
       saveLevel();
-      statusEl.textContent = `🎉 Goal smashed! ${score}/${goal}. Level up → ${level}. Next round is harder.`;
-      celebrateWin();
+      statusEl.textContent = `🏆 WIN. ${score}/${goal}. Level up → ${level}. Next round is harder.`;
+      celebrateWin(goal);
     } else {
-      statusEl.textContent = `⏱️ Time up. ${score}/${goal} — try again (current level ${level}).`;
+      statusEl.textContent = `⏱️ Time up. ${score}/${goal} — try again (level ${level}).`;
     }
 
     if (score > best) {
@@ -105,6 +116,13 @@
   tapButton.addEventListener("click", () => {
     if (!running) return;
     score += 1;
+
+    const goal = selectedGoal();
+    if (score >= goal) {
+      finishRound({ won: true });
+      return;
+    }
+
     render();
   });
 
