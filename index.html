@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>WaitPlay — Play while you wait</title>
-  <meta name="description" content="WaitPlay is a monetization-ready starter hub for quick micro games people can play while they wait." />
+  <meta name="description" content="WaitPlay is a starter hub for quick mini games with sponsor ad slots and simple lead capture." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -26,59 +26,22 @@
           <p class="eyebrow">Micro game starter</p>
           <h1>Play while you wait.</h1>
           <p class="subtitle">
-            Keep users engaged with instant mini games during checkout, loading, or downtime — with built-in monetization placeholders.
+            Keep users engaged during checkout, loading, or downtime with instant mini games and simple sponsor inventory.
           </p>
           <div class="hero-actions">
             <a class="btn primary" href="#games" data-track="cta_browse_games">Browse games</a>
-            <a class="btn ghost" href="#newsletter" data-track="cta_join_waitlist">Join waitlist</a>
-            <a class="btn ghost" href="#sponsor" data-track="cta_sponsor_pilot_click">Become a Sponsor (Pilot $99)</a>
+            <a class="btn ghost" href="#newsletter" data-track="cta_join_waitlist">Join newsletter</a>
+            <a class="btn ghost" href="#sponsor" data-track="cta_sponsor_pilot_click">Sponsor pilot ($99)</a>
           </div>
-          <p class="section-sub">Want measurable exposure? Try a WaitPlay Sponsor Pilot — $99, 30 days, tracked clicks.</p>
+          <p class="section-sub">Goal: prove engagement + sponsor click value quickly.</p>
         </div>
         <div class="hero-card">
-          <h3>Why WaitPlay?</h3>
+          <h3>What’s included</h3>
           <ul>
             <li>⚡ Fast static setup (HTML/CSS/JS)</li>
-            <li>📈 Event hooks ready for analytics wiring</li>
-            <li>💸 Ad + premium monetization blocks included</li>
+            <li>🎮 Two playable mini apps</li>
+            <li>💸 Ad Slot A + B ready for sponsor creative</li>
           </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <h2>Roadmap board</h2>
-        <p class="section-sub">Kanban view so work is split into clear boxes, not one pile.</p>
-        <div class="kanban-grid">
-          <article class="kanban-col">
-            <h3>Inbox</h3>
-            <ul>
-              <li>Add sponsor logo slots — <strong>Scout</strong></li>
-              <li>Add analytics dashboard link — <strong>Forge</strong></li>
-            </ul>
-          </article>
-          <article class="kanban-col">
-            <h3>In Progress</h3>
-            <ul>
-              <li>Landing page polish pass — <strong>Pixel</strong></li>
-              <li>Newsletter flow hardening — <strong>Forge</strong></li>
-            </ul>
-          </article>
-          <article class="kanban-col">
-            <h3>Review</h3>
-            <ul>
-              <li>Mobile layout QA — <strong>Lens</strong></li>
-              <li>Sponsor CTA copy check — <strong>Bigfuss</strong></li>
-            </ul>
-          </article>
-          <article class="kanban-col">
-            <h3>Done</h3>
-            <ul>
-              <li>Fixed 404 app paths — <strong>Forge</strong></li>
-              <li>Vercel routing stable — <strong>Forge</strong></li>
-            </ul>
-          </article>
         </div>
       </div>
     </section>
@@ -86,7 +49,7 @@
     <section id="games" class="section">
       <div class="container">
         <h2>Mini apps</h2>
-        <p class="section-sub">Plug existing mini-games into one conversion-focused hub.</p>
+        <p class="section-sub">Tap into short-session engagement with lightweight games.</p>
         <div id="apps-grid" class="grid"></div>
       </div>
     </section>
@@ -94,15 +57,17 @@
     <section id="monetize" class="section alt">
       <div class="container">
         <h2>Monetization</h2>
-        <p class="section-sub">Starter placement ideas to validate revenue quickly. Sponsor pilot: $99 for 30 days (limited slots).</p>
+        <p class="section-sub">Two sample sponsor placements + a fixed pilot offer.</p>
         <div class="monetize-grid">
           <article class="card">
-            <h3>Ad Slot A</h3>
-            <div class="ad-placeholder">728 × 90 leaderboard placeholder</div>
+            <h3>Ad Slot A (Top Banner)</h3>
+            <div class="ad-placeholder">728 × 90 sponsor banner area</div>
+            <p class="section-sub">Use for brand logo + CTA URL.</p>
           </article>
           <article class="card">
-            <h3>Ad Slot B</h3>
-            <div class="ad-placeholder">300 × 250 rectangle placeholder</div>
+            <h3>Ad Slot B (Sidebar/Inline)</h3>
+            <div class="ad-placeholder">300 × 250 sponsor creative area</div>
+            <p class="section-sub">Use for promo image + offer text.</p>
           </article>
           <article class="card premium">
             <h3>Sponsor Pilot Offer</h3>
@@ -116,20 +81,20 @@
     <section id="sponsor" class="section">
       <div class="container narrow">
         <h2>Sponsor WaitPlay</h2>
-        <p class="section-sub">Run a low-risk 30-day sponsor test for $99. Get placement in the WaitPlay widget plus weekly performance stats.</p>
-        <p>Email stevigbot2.0@gmail.com to start.</p>
+        <p class="section-sub">Low-risk pilot. We run your creative in Slot A/B and send weekly performance snapshots.</p>
+        <p>Email <strong>stevigbot2.0@gmail.com</strong> with subject: <em>WaitPlay Sponsor Pilot</em>.</p>
       </div>
     </section>
 
     <section id="newsletter" class="section">
       <div class="container narrow">
-        <h2>Get launch updates</h2>
-        <p class="section-sub">Enter your email and we’ll open a pre-filled message to subscribe.</p>
+        <h2>Newsletter</h2>
+        <p class="section-sub">Enter your email and we’ll open a pre-filled subscription message in your mail app.</p>
         <form id="emailForm" class="email-form" novalidate>
           <label for="email">Email</label>
           <div class="email-row">
             <input id="email" name="email" type="email" placeholder="you@example.com" required />
-            <button class="btn primary" type="submit" data-track="email_submit">Notify me</button>
+            <button class="btn primary" type="submit" data-track="email_submit">Subscribe</button>
           </div>
           <p id="formMsg" class="form-msg" aria-live="polite"></p>
         </form>
@@ -139,7 +104,7 @@
 
   <footer class="site-footer">
     <div class="container footer-row">
-      <small>© <span id="year"></span> WaitPlay MVP · Sponsorship inquiries: stevigbot2.0@gmail.com</small>
+      <small>© <span id="year"></span> WaitPlay MVP · Sponsorship: stevigbot2.0@gmail.com</small>
       <div>
         <a href="privacy.html">Privacy</a>
         <a href="terms.html">Terms</a>
