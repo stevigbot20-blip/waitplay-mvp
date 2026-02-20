@@ -50,6 +50,11 @@ h1 { font-size: clamp(2rem, 5vw, 3rem); margin: 0 0 .8rem; }
 .section.alt { background: var(--bg-alt); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 .section-sub { color: var(--muted); margin-top: .2rem; }
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1rem; margin-top: 1rem; }
+.kanban-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: .9rem; margin-top: 1rem; }
+.kanban-col { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: .9rem; }
+.kanban-col h3 { margin: 0 0 .5rem; font-size: 1rem; }
+.kanban-col ul { margin: 0; padding-left: 1rem; color: var(--muted); }
+.kanban-col li { margin: .35rem 0; }
 .app-card {
   background: var(--card);
   border: 1px solid var(--border);
