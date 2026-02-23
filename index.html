@@ -4,7 +4,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>WaitPlay — Play while you wait</title>
-  <meta name="description" content="WaitPlay is a starter hub for quick mini games with sponsor ad slots and simple lead capture." />
+  <meta name="description" content="Kill time, not your battery. Instant micro-games for waiting rooms, checkout lines, and downtime." />
+  
+  <!-- PWA Meta Tags -->
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#6366f1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="WaitPlay" />
+  <link rel="apple-touch-icon" href="/icons/icon-192.png" />
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="WaitPlay — Play while you wait" />
+  <meta property="og:description" content="Kill time, not your battery. Instant micro-games for waiting rooms, checkout lines, and downtime." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://waitplay-mvp.vercel.app" />
+  
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -139,5 +154,16 @@
     };
   </script>
   <script src="script.js"></script>
+  
+  <!-- Service Worker Registration -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then((reg) => console.log('SW registered:', reg.scope))
+          .catch((err) => console.log('SW registration failed:', err));
+      });
+    }
+  </script>
 </body>
 </html>
