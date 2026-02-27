@@ -23,11 +23,5 @@
         { "key": "Cache-Control", "value": "no-cache" }
       ]
     }
-  ],
-  "rewrites": [
-    {
-      "source": "/.well-known/assetlinks.json",
-      "destination": "/public/.well-known/assetlinks.json"
-    }
   ]
 }
