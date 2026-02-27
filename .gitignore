@@ -1,2 +1,6 @@
 .vercel
 .env*.local
+twa/app/build
+twa/app/.gradle
+twa/gradle-8.4
+twa/gradle-8.4-bin.zip
