@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorAccent">#8b5cf6</color>
+    <color name="colorBackground">#0f172a</color>
+    <color name="colorPrimary">#6366f1</color>
+    <color name="colorPrimaryDark">#4f46e5</color>
+    <color name="colorText">#ffffff</color>
+    <string name="app_name">WaitPlay</string>
+    <string name="asset_statements">
+        [{
+            \"relation\": [\"delegate_permission/common.handle_all_urls\"],
+            \"target\": {
+                \"namespace\": \"web\",
+                \"site\": \"https://waitplay-app.vercel.app\"
+            }
+        }]
+    </string>
+    <string name="file_provider_authority">com.waitplay.app.fileprovider</string>
+    <style name="Theme.WaitPlay" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@color/colorBackground</item>
+        <item name="android:navigationBarColor">@color/colorBackground</item>
+        <item name="android:statusBarColor">@color/colorPrimary</item>
+    </style>
+    <style name="Theme.WaitPlay.Launcher" parent="Theme.WaitPlay">
+        <item name="android:windowBackground">@drawable/splash</item>
+    </style>
+</resources>

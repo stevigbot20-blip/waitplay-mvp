@@ -25,7 +25,7 @@
 
             <meta-data
                 android:name="android.support.customtabs.trusted.DEFAULT_URL"
-                android:value="https://waitplay-mvp.vercel.app" />
+                android:value="https://waitplay-app.vercel.app" />
 
             <meta-data
                 android:name="android.support.customtabs.trusted.STATUS_BAR_COLOR"
@@ -60,7 +60,7 @@
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="https" android:host="waitplay-mvp.vercel.app" />
+                <data android:scheme="https" android:host="waitplay-app.vercel.app" />
             </intent-filter>
 
         </activity>

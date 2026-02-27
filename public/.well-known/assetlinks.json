@@ -1,7 +1,1 @@
-[{
-  "relation": ["delegate_permission/common.handle_all_urls"],
-  "target": {
-    "namespace": "web",
-    "site": "https://waitplay-mvp.vercel.app"
-  }
-}]
+[{"relation":["delegate_permission/common.handle_all_urls"],"target":{"namespace":"android_app","package_name":"com.waitplay.app","sha256_cert_fingerprints":["F9:E6:7D:93:8A:18:3B:93:A4:D9:44:3E:C9:5C:6B:3B:41:C7:7C:AC:D2:B6:A5:AE:2C:30:81:F9:55:D3:99:D1"]}}

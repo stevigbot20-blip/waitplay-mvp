@@ -1,0 +1,243 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.waitplay.app"
+4    android:versionCode="1"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+9        android:targetSdkVersion="34" />
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->/home/node/.openclaw/workspace/waitplay-mvp/twa/app/src/main/AndroidManifest.xml:4:5-67
+11-->/home/node/.openclaw/workspace/waitplay-mvp/twa/app/src/main/AndroidManifest.xml:4:22-64
+12    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+12-->/home/node/.openclaw/workspace/waitplay-mvp/twa/app/src/main/AndroidManifest.xml:5:5-79
+12-->/home/node/.openclaw/workspace/waitplay-mvp/twa/app/src/main/AndroidManifest.xml:5:22-76
+13
+14    <queries>
+14-->[com.google.androidbrowserhelper:androidbrowserhelper:2.3.0] /home/node/.gradle/caches/transforms-3/4fa603289ef31b0f6dc2629970f7aa83/transformed/jetified-androidbrowserhelper-2.3.0/AndroidManifest.xml:26:5-34:15
+15        <intent>
+15-->[com.google.androidbrowserhelper:androidbrowserhelper:2.3.0] /home/node/.gradle/caches/transforms-3/4fa603289ef31b0f6dc2629970f7aa83/transformed/jetified-androidbrowserhelper-2.3.0/AndroidManifest.xml:27:9-33:18
+16            <action android:name="android.intent.action.VIEW" />
+16-->/home/node/.openclaw/workspace/waitplay-mvp/twa/app/src/main/AndroidManifest.xml:60:17-69
+16-->/home/node/.openclaw/workspace/waitplay-mvp/twa/app/src/main/AndroidManifest.xml:60:25-66
+17
+18            <category android:name="android.intent.category.BROWSABLE" />
+18-->/home/node/.openclaw/workspace/waitplay-mvp/twa/app/src/main/AndroidManifest.xml:62:17-78
+18-->/home/node/.openclaw/workspace/waitplay-mvp/twa/app/src/main/AndroidManifest.xml:62:27-75
+19
+20            <data android:scheme="https" />
+20-->/home/node/.openclaw/workspace/waitplay-mvp/twa/app/src/main/AndroidManifest.xml:63:17-87
+20-->/home/node/.openclaw/workspace/waitplay-mvp/twa/app/src/main/AndroidManifest.xml:63:23-45
+21        </intent>
+22    </queries>
+23
+24    <permission
+24-->[androidx.core:core:1.9.0] /home/node/.gradle/caches/transforms-3/2c572bfdb425e6c1375d05070450f3cb/transformed/core-1.9.0/AndroidManifest.xml:22:5-24:47
+25        android:name="com.waitplay.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+25-->[androidx.core:core:1.9.0] /home/node/.gradle/caches/transforms-3/2c572bfdb425e6c1375d05070450f3cb/transformed/core-1.9.0/AndroidManifest.xml:23:9-81
+26        android:protectionLevel="signature" />
+26-->[androidx.core:core:1.9.0] /home/node/.gradle/caches/transforms-3/2c572bfdb425e6c1375d05070450f3cb/transformed/core-1.9.0/AndroidManifest.xml:24:9-44
+27
+28    <uses-permission android:name="com.waitplay.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+28-->[androidx.core:core:1.9.0] /home/node/.gradle/caches/transforms-3/2c572bfdb425e6c1375d05070450f3cb/transformed/core-1.9.0/AndroidManifest.xml:26:5-97
+28-->[androidx.core:core:1.9.0] /home/node/.gradle/caches/transforms-3/2c572bfdb425e6c1375d05070450f3cb/transformed/core-1.9.0/AndroidManifest.xml:26:22-94
+29
+30    <application
+30-->/home/node/.openclaw/workspace/waitplay-mvp/twa/app/src/main/AndroidManifest.xml:7:5-78:19
+31        android:allowBackup="true"
+31-->/home/node/.openclaw/workspace/waitplay-mvp/twa/app/src/main/AndroidManifest.xml:8:9-35
+32        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+32-->[androidx.core:core:1.9.0] /home/node/.gradle/caches/transforms-3/2c572bfdb425e6c1375d05070450f3cb/transformed/core-1.9.0/AndroidManifest.xml:28:18-86
+33        android:extractNativeLibs="true"
+34        android:icon="@mipmap/ic_launcher"
+34-->/home/node/.openclaw/workspace/waitplay-mvp/twa/app/src/main/AndroidManifest.xml:9:9-43
+35        android:label="@string/app_name"
+35-->/home/node/.openclaw/workspace/waitplay-mvp/twa/app/src/main/AndroidManifest.xml:10:9-41
+36        android:roundIcon="@mipmap/ic_launcher_round"
+36-->/home/node/.openclaw/workspace/waitplay-mvp/twa/app/src/main/AndroidManifest.xml:11:9-54
+37        android:supportsRtl="true"
+37-->/home/node/.openclaw/workspace/waitplay-mvp/twa/app/src/main/AndroidManifest.xml:12:9-35
+38        android:theme="@style/Theme.WaitPlay" >
+38-->/home/node/.openclaw/workspace/waitplay-mvp/twa/app/src/main/AndroidManifest.xml:13:9-46
+39        <meta-data
+39-->/home/node/.openclaw/workspace/waitplay-mvp/twa/app/src/main/AndroidManifest.xml:15:9-17:59
+40            android:name="asset_statements"
+40-->/home/node/.openclaw/workspace/waitplay-mvp/twa/app/src/main/AndroidManifest.xml:16:13-44
+41            android:resource="@string/asset_statements" />
+41-->/home/node/.openclaw/workspace/waitplay-mvp/twa/app/src/main/AndroidManifest.xml:17:13-56
+42
+43        <activity
+43-->/home/node/.openclaw/workspace/waitplay-mvp/twa/app/src/main/AndroidManifest.xml:19:9-66:20
+44            android:name="com.google.androidbrowserhelper.trusted.LauncherActivity"
+44-->/home/node/.openclaw/workspace/waitplay-mvp/twa/app/src/main/AndroidManifest.xml:20:13-84
+45            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+45-->/home/node/.openclaw/workspace/waitplay-mvp/twa/app/src/main/AndroidManifest.xml:21:13-87
+46            android:exported="true"
+46-->/home/node/.openclaw/workspace/waitplay-mvp/twa/app/src/main/AndroidManifest.xml:22:13-36
+47            android:label="@string/app_name"
+47-->/home/node/.openclaw/workspace/waitplay-mvp/twa/app/src/main/AndroidManifest.xml:23:13-45
+48            android:theme="@style/Theme.WaitPlay.Launcher" >
+48-->/home/node/.openclaw/workspace/waitplay-mvp/twa/app/src/main/AndroidManifest.xml:24:13-59
+49            <meta-data
+49-->/home/node/.openclaw/workspace/waitplay-mvp/twa/app/src/main/AndroidManifest.xml:26:13-28:67
+50                android:name="android.support.customtabs.trusted.DEFAULT_URL"
+50-->/home/node/.openclaw/workspace/waitplay-mvp/twa/app/src/main/AndroidManifest.xml:27:17-78
+51                android:value="https://waitplay-app.vercel.app" />
+51-->/home/node/.openclaw/workspace/waitplay-mvp/twa/app/src/main/AndroidManifest.xml:28:17-64
+52            <meta-data
+52-->/home/node/.openclaw/workspace/waitplay-mvp/twa/app/src/main/AndroidManifest.xml:30:13-32:58
+53                android:name="android.support.customtabs.trusted.STATUS_BAR_COLOR"
+53-->/home/node/.openclaw/workspace/waitplay-mvp/twa/app/src/main/AndroidManifest.xml:31:17-83
+54                android:resource="@color/colorPrimary" />
+54-->/home/node/.openclaw/workspace/waitplay-mvp/twa/app/src/main/AndroidManifest.xml:32:17-55
+55            <meta-data
+55-->/home/node/.openclaw/workspace/waitplay-mvp/twa/app/src/main/AndroidManifest.xml:34:13-36:62
+56                android:name="android.support.customtabs.trusted.NAVIGATION_BAR_COLOR"
+56-->/home/node/.openclaw/workspace/waitplay-mvp/twa/app/src/main/AndroidManifest.xml:35:17-87
+57                android:resource="@color/colorPrimaryDark" />
+57-->/home/node/.openclaw/workspace/waitplay-mvp/twa/app/src/main/AndroidManifest.xml:36:17-59
+58            <meta-data
+58-->/home/node/.openclaw/workspace/waitplay-mvp/twa/app/src/main/AndroidManifest.xml:38:13-40:55
+59                android:name="android.support.customtabs.trusted.SPLASH_IMAGE_DRAWABLE"
+59-->/home/node/.openclaw/workspace/waitplay-mvp/twa/app/src/main/AndroidManifest.xml:39:17-88
+60                android:resource="@drawable/splash" />
+60-->/home/node/.openclaw/workspace/waitplay-mvp/twa/app/src/main/AndroidManifest.xml:40:17-52
+61            <meta-data
+61-->/home/node/.openclaw/workspace/waitplay-mvp/twa/app/src/main/AndroidManifest.xml:42:13-44:61
+62                android:name="android.support.customtabs.trusted.SPLASH_SCREEN_BACKGROUND_COLOR"
+62-->/home/node/.openclaw/workspace/waitplay-mvp/twa/app/src/main/AndroidManifest.xml:43:17-97
+63                android:resource="@color/colorBackground" />
+63-->/home/node/.openclaw/workspace/waitplay-mvp/twa/app/src/main/AndroidManifest.xml:44:17-58
+64            <meta-data
+64-->/home/node/.openclaw/workspace/waitplay-mvp/twa/app/src/main/AndroidManifest.xml:46:13-48:39
+65                android:name="android.support.customtabs.trusted.SPLASH_SCREEN_FADE_OUT_DURATION"
+65-->/home/node/.openclaw/workspace/waitplay-mvp/twa/app/src/main/AndroidManifest.xml:47:17-98
+66                android:value="300" />
+66-->/home/node/.openclaw/workspace/waitplay-mvp/twa/app/src/main/AndroidManifest.xml:48:17-36
+67            <meta-data
+67-->/home/node/.openclaw/workspace/waitplay-mvp/twa/app/src/main/AndroidManifest.xml:50:13-52:67
+68                android:name="android.support.customtabs.trusted.FILE_PROVIDER_AUTHORITY"
+68-->/home/node/.openclaw/workspace/waitplay-mvp/twa/app/src/main/AndroidManifest.xml:51:17-90
+69                android:value="@string/file_provider_authority" />
+69-->/home/node/.openclaw/workspace/waitplay-mvp/twa/app/src/main/AndroidManifest.xml:52:17-64
+70
+71            <intent-filter>
+71-->/home/node/.openclaw/workspace/waitplay-mvp/twa/app/src/main/AndroidManifest.xml:54:13-57:29
+72                <action android:name="android.intent.action.MAIN" />
+72-->/home/node/.openclaw/workspace/waitplay-mvp/twa/app/src/main/AndroidManifest.xml:55:17-69
+72-->/home/node/.openclaw/workspace/waitplay-mvp/twa/app/src/main/AndroidManifest.xml:55:25-66
+73
+74                <category android:name="android.intent.category.LAUNCHER" />
+74-->/home/node/.openclaw/workspace/waitplay-mvp/twa/app/src/main/AndroidManifest.xml:56:17-77
+74-->/home/node/.openclaw/workspace/waitplay-mvp/twa/app/src/main/AndroidManifest.xml:56:27-74
+75            </intent-filter>
+76            <intent-filter android:autoVerify="true" >
+76-->/home/node/.openclaw/workspace/waitplay-mvp/twa/app/src/main/AndroidManifest.xml:59:13-64:29
+76-->/home/node/.openclaw/workspace/waitplay-mvp/twa/app/src/main/AndroidManifest.xml:59:28-53
+77                <action android:name="android.intent.action.VIEW" />
+77-->/home/node/.openclaw/workspace/waitplay-mvp/twa/app/src/main/AndroidManifest.xml:60:17-69
+77-->/home/node/.openclaw/workspace/waitplay-mvp/twa/app/src/main/AndroidManifest.xml:60:25-66
+78
+79                <category android:name="android.intent.category.DEFAULT" />
+79-->/home/node/.openclaw/workspace/waitplay-mvp/twa/app/src/main/AndroidManifest.xml:61:17-76
+79-->/home/node/.openclaw/workspace/waitplay-mvp/twa/app/src/main/AndroidManifest.xml:61:27-73
+80                <category android:name="android.intent.category.BROWSABLE" />
+80-->/home/node/.openclaw/workspace/waitplay-mvp/twa/app/src/main/AndroidManifest.xml:62:17-78
+80-->/home/node/.openclaw/workspace/waitplay-mvp/twa/app/src/main/AndroidManifest.xml:62:27-75
+81
+82                <data
+82-->/home/node/.openclaw/workspace/waitplay-mvp/twa/app/src/main/AndroidManifest.xml:63:17-87
+83                    android:host="waitplay-app.vercel.app"
+83-->/home/node/.openclaw/workspace/waitplay-mvp/twa/app/src/main/AndroidManifest.xml:63:46-84
+84                    android:scheme="https" />
+84-->/home/node/.openclaw/workspace/waitplay-mvp/twa/app/src/main/AndroidManifest.xml:63:23-45
+85            </intent-filter>
+86        </activity>
+87
+88        <provider
+88-->/home/node/.openclaw/workspace/waitplay-mvp/twa/app/src/main/AndroidManifest.xml:68:9-76:20
+89            android:name="androidx.core.content.FileProvider"
+89-->/home/node/.openclaw/workspace/waitplay-mvp/twa/app/src/main/AndroidManifest.xml:69:13-62
+90            android:authorities="@string/file_provider_authority"
+90-->/home/node/.openclaw/workspace/waitplay-mvp/twa/app/src/main/AndroidManifest.xml:70:13-66
+91            android:exported="false"
+91-->/home/node/.openclaw/workspace/waitplay-mvp/twa/app/src/main/AndroidManifest.xml:71:13-37
+92            android:grantUriPermissions="true" >
+92-->/home/node/.openclaw/workspace/waitplay-mvp/twa/app/src/main/AndroidManifest.xml:72:13-47
+93            <meta-data
+93-->/home/node/.openclaw/workspace/waitplay-mvp/twa/app/src/main/AndroidManifest.xml:73:13-75:54
+94                android:name="android.support.FILE_PROVIDER_PATHS"
+94-->/home/node/.openclaw/workspace/waitplay-mvp/twa/app/src/main/AndroidManifest.xml:74:17-67
+95                android:resource="@xml/file_paths" />
+95-->/home/node/.openclaw/workspace/waitplay-mvp/twa/app/src/main/AndroidManifest.xml:75:17-51
+96        </provider>
+97        <provider
+97-->[androidx.emoji2:emoji2:1.2.0] /home/node/.gradle/caches/transforms-3/0f0c478ae3801544d21da65048166e43/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
+98            android:name="androidx.startup.InitializationProvider"
+98-->[androidx.emoji2:emoji2:1.2.0] /home/node/.gradle/caches/transforms-3/0f0c478ae3801544d21da65048166e43/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:25:13-67
+99            android:authorities="com.waitplay.app.androidx-startup"
+99-->[androidx.emoji2:emoji2:1.2.0] /home/node/.gradle/caches/transforms-3/0f0c478ae3801544d21da65048166e43/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:26:13-68
+100            android:exported="false" >
+100-->[androidx.emoji2:emoji2:1.2.0] /home/node/.gradle/caches/transforms-3/0f0c478ae3801544d21da65048166e43/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:27:13-37
+101            <meta-data
+101-->[androidx.emoji2:emoji2:1.2.0] /home/node/.gradle/caches/transforms-3/0f0c478ae3801544d21da65048166e43/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
+102                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+102-->[androidx.emoji2:emoji2:1.2.0] /home/node/.gradle/caches/transforms-3/0f0c478ae3801544d21da65048166e43/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:30:17-75
+103                android:value="androidx.startup" />
+103-->[androidx.emoji2:emoji2:1.2.0] /home/node/.gradle/caches/transforms-3/0f0c478ae3801544d21da65048166e43/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:31:17-49
+104            <meta-data
+104-->[androidx.lifecycle:lifecycle-process:2.6.1] /home/node/.gradle/caches/transforms-3/81cf0d341208e1615072a3d07143b717/transformed/jetified-lifecycle-process-2.6.1/AndroidManifest.xml:29:13-31:52
+105                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+105-->[androidx.lifecycle:lifecycle-process:2.6.1] /home/node/.gradle/caches/transforms-3/81cf0d341208e1615072a3d07143b717/transformed/jetified-lifecycle-process-2.6.1/AndroidManifest.xml:30:17-78
+106                android:value="androidx.startup" />
+106-->[androidx.lifecycle:lifecycle-process:2.6.1] /home/node/.gradle/caches/transforms-3/81cf0d341208e1615072a3d07143b717/transformed/jetified-lifecycle-process-2.6.1/AndroidManifest.xml:31:17-49
+107            <meta-data
+107-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/node/.gradle/caches/transforms-3/1cdb85cdca350f6724ef84561e5752f4/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:29:13-31:52
+108                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+108-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/node/.gradle/caches/transforms-3/1cdb85cdca350f6724ef84561e5752f4/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:30:17-85
+109                android:value="androidx.startup" />
+109-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/node/.gradle/caches/transforms-3/1cdb85cdca350f6724ef84561e5752f4/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:31:17-49
+110        </provider>
+111
+112        <receiver
+112-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/node/.gradle/caches/transforms-3/1cdb85cdca350f6724ef84561e5752f4/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:34:9-52:20
+113            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+113-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/node/.gradle/caches/transforms-3/1cdb85cdca350f6724ef84561e5752f4/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:35:13-76
+114            android:directBootAware="false"
+114-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/node/.gradle/caches/transforms-3/1cdb85cdca350f6724ef84561e5752f4/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:36:13-44
+115            android:enabled="true"
+115-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/node/.gradle/caches/transforms-3/1cdb85cdca350f6724ef84561e5752f4/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:37:13-35
+116            android:exported="true"
+116-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/node/.gradle/caches/transforms-3/1cdb85cdca350f6724ef84561e5752f4/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:38:13-36
+117            android:permission="android.permission.DUMP" >
+117-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/node/.gradle/caches/transforms-3/1cdb85cdca350f6724ef84561e5752f4/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:39:13-57
+118            <intent-filter>
+118-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/node/.gradle/caches/transforms-3/1cdb85cdca350f6724ef84561e5752f4/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:40:13-42:29
+119                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+119-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/node/.gradle/caches/transforms-3/1cdb85cdca350f6724ef84561e5752f4/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:41:17-91
+119-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/node/.gradle/caches/transforms-3/1cdb85cdca350f6724ef84561e5752f4/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:41:25-88
+120            </intent-filter>
+121            <intent-filter>
+121-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/node/.gradle/caches/transforms-3/1cdb85cdca350f6724ef84561e5752f4/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:43:13-45:29
+122                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+122-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/node/.gradle/caches/transforms-3/1cdb85cdca350f6724ef84561e5752f4/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:44:17-85
+122-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/node/.gradle/caches/transforms-3/1cdb85cdca350f6724ef84561e5752f4/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:44:25-82
+123            </intent-filter>
+124            <intent-filter>
+124-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/node/.gradle/caches/transforms-3/1cdb85cdca350f6724ef84561e5752f4/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:46:13-48:29
+125                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+125-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/node/.gradle/caches/transforms-3/1cdb85cdca350f6724ef84561e5752f4/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:47:17-88
+125-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/node/.gradle/caches/transforms-3/1cdb85cdca350f6724ef84561e5752f4/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:47:25-85
+126            </intent-filter>
+127            <intent-filter>
+127-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/node/.gradle/caches/transforms-3/1cdb85cdca350f6724ef84561e5752f4/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:49:13-51:29
+128                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+128-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/node/.gradle/caches/transforms-3/1cdb85cdca350f6724ef84561e5752f4/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:50:17-95
+128-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/node/.gradle/caches/transforms-3/1cdb85cdca350f6724ef84561e5752f4/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:50:25-92
+129            </intent-filter>
+130        </receiver>
+131    </application>
+132
+133</manifest>

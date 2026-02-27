@@ -1,0 +1,17 @@
+R_DEF: Internal format may change without notice
+local
+color colorAccent
+color colorBackground
+color colorPrimary
+color colorPrimaryDark
+color colorText
+drawable ic_launcher_foreground
+drawable splash
+mipmap ic_launcher
+mipmap ic_launcher_round
+string app_name
+string asset_statements
+string file_provider_authority
+style Theme.WaitPlay
+style Theme.WaitPlay.Launcher
+xml file_paths

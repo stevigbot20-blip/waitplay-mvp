@@ -7,7 +7,7 @@
             \"relation\": [\"delegate_permission/common.handle_all_urls\"],
             \"target\": {
                 \"namespace\": \"web\",
-                \"site\": \"https://waitplay-mvp.vercel.app\"
+                \"site\": \"https://waitplay-app.vercel.app\"
             }
         }]
     </string>
