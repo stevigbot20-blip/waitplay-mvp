@@ -3,6 +3,12 @@
   "public": true,
   "cleanUrls": true,
   "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/apps/(.*)",
+      "destination": "/apps/$1"
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
