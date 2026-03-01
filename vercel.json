@@ -1,13 +1,11 @@
 {
   "version": 2,
   "public": true,
-  "cleanUrls": true,
+  "cleanUrls": false,
   "trailingSlash": false,
-  "rewrites": [
-    {
-      "source": "/apps/(.*)",
-      "destination": "/apps/$1"
-    }
+  "routes": [
+    { "src": "/apps/(.*)", "dest": "/apps/$1" },
+    { "src": "/(.*)", "dest": "/$1" }
   ],
   "headers": [
     {
