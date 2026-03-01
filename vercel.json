@@ -2,9 +2,7 @@
   "version": 2,
   "public": true,
   "cleanUrls": false,
-  "trailingSlash": false,
   "routes": [
-    { "src": "/apps/(.*)", "dest": "/apps/$1" },
     { "src": "/(.*)", "dest": "/$1" }
   ],
   "headers": [
