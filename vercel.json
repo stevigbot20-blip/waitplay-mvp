@@ -1,10 +1,9 @@
 {
   "version": 2,
   "public": true,
-  "cleanUrls": false,
-  "routes": [
-    { "src": "/(.*)", "dest": "/$1" }
-  ],
+  "outputDirectory": ".",
+  "cleanUrls": true,
+  "trailingSlash": false,
   "headers": [
     {
       "source": "/(.*)",
