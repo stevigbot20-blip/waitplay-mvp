@@ -10,14 +10,18 @@ Simple landing page + playable mini-games for quick validation.
 - Landing page with sponsor offer CTA
 - Mini-games linked from landing page:
   - `/apps/easy-mini-app/` (Tap Sprint with 30s/60s timed goal)
-  - `/apps/better-mini-game/`
+  - `/apps/better-mini-game/` (Whack-a-Dot - hit moving dots with combos)
+  - `/apps/memory-match/` (Memory Match - find pairs in fewest moves)
+  - `/apps/reaction-test/` (Reaction Test - test reflexes)
 - Basic click tracking via `console.log`
 - Newsletter form opens a pre-filled email subscription request
 
 ## Project structure
 - `index.html`, `styles.css`, `script.js` - landing page
 - `apps/easy-mini-app/*` - timed tap game
-- `apps/better-mini-game/*` - second game
+- `apps/better-mini-game/*` - dot hitting game
+- `apps/memory-match/*` - card matching game
+- `apps/reaction-test/*` - reaction timer game
 - `privacy.html`, `terms.html`
 
 ## Local run
