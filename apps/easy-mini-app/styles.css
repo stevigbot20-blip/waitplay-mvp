@@ -44,13 +44,30 @@ body {
 }
 
 .back-link {
-  display: inline-block;
-  margin-bottom: .6rem;
-  color: #9fb4ff;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 1rem;
+  padding: 0.6rem 1rem;
+  color: var(--text);
+  background: var(--reset);
+  border: 1px solid #8aa0ff66;
+  border-radius: 10px;
   text-decoration: none;
   font-weight: 700;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  width: fit-content;
 }
-.back-link:hover { text-decoration: underline; }
+.back-link:hover {
+  background: rgba(238, 241, 255, 0.3);
+  border-color: var(--accent);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(74, 108, 255, 0.2);
+}
+.back-link:active {
+  transform: translateY(0);
+}
 
 h1 { margin: 0; }
 .sub { margin: .4rem 0 1rem; color: var(--muted); }

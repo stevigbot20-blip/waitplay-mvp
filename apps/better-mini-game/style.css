@@ -35,6 +35,32 @@ body {
 .topbar h1 { margin: 0; font-size: clamp(1.5rem, 4vw, 2rem); }
 .subtitle { margin: 4px 0 12px; color: var(--muted); }
 
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 1rem;
+  padding: 0.6rem 1rem;
+  color: #eaf0ff;
+  background: rgba(111, 227, 255, 0.1);
+  border: 1px solid rgba(111, 227, 255, 0.3);
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  width: fit-content;
+  transition: all 0.2s ease;
+}
+.back-link:hover {
+  background: rgba(111, 227, 255, 0.18);
+  border-color: var(--accent);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(111, 227, 255, 0.15);
+}
+.back-link:active {
+  transform: translateY(0);
+}
+
 .hud {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
