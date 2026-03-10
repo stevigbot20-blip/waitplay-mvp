@@ -1,4 +1,4 @@
-const CACHE_NAME = 'waitplay-v1';
+const CACHE_NAME = 'waitplay-v2';
 const OFFLINE_URL = '/offline.html';
 
 const ASSETS_TO_CACHE = [
@@ -42,28 +42,20 @@ self.addEventListener('fetch', (event) => {
   if (event.request.method !== 'GET') return;
 
   event.respondWith(
-    caches.match(event.request)
-      .then((cachedResponse) => {
-        if (cachedResponse) {
-          return cachedResponse;
+    fetch(event.request)
+      .then((response) => {
+        if (!response || response.status !== 200) {
+          return response;
         }
-
-        return fetch(event.request)
-          .then((response) => {
-            // Don't cache non-successful responses
-            if (!response || response.status !== 200) {
-              return response;
-            }
-
-            // Clone response for caching
-            const responseToCache = response.clone();
-            caches.open(CACHE_NAME)
-              .then((cache) => cache.put(event.request, responseToCache));
-
-            return response;
-          })
-          .catch(() => {
-            // Return offline page for navigation requests
+        const responseToCache = response.clone();
+        caches.open(CACHE_NAME)
+          .then((cache) => cache.put(event.request, responseToCache));
+        return response;
+      })
+      .catch(() => {
+        return caches.match(event.request)
+          .then((cachedResponse) => {
+            if (cachedResponse) return cachedResponse;
             if (event.request.mode === 'navigate') {
               return caches.match(OFFLINE_URL);
             }
