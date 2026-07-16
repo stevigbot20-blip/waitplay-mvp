@@ -37,10 +37,12 @@
       b.addEventListener('click', () => {
         if (!running) return;
         if (i === odd) {
+          window.WaitPlaySfx?.play('good');
           score += 1;
           scoreEl.textContent = String(score);
           buildGrid();
         } else {
+          window.WaitPlaySfx?.play('bad');
           b.classList.add('wrong');
           timeLeft = Math.max(1, timeLeft - 2);
           timeEl.textContent = String(timeLeft);

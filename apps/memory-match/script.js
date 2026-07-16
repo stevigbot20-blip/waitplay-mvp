@@ -66,6 +66,7 @@
       gameStarted = true;
     }
 
+    window.WaitPlaySfx?.play('flip');
     card.classList.add('flipped');
     flippedCards.push(card);
 
@@ -81,6 +82,7 @@
     const [card1, card2] = flippedCards;
     
     if (card1.dataset.emoji === card2.dataset.emoji) {
+      window.WaitPlaySfx?.play('match');
       card1.classList.add('matched');
       card2.classList.add('matched');
       matchedPairs++;
@@ -93,6 +95,7 @@
         endGame();
       }
     } else {
+      window.WaitPlaySfx?.play('bad');
       setTimeout(() => {
         card1.classList.remove('flipped');
         card2.classList.remove('flipped');

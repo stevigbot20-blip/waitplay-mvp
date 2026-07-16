@@ -130,6 +130,7 @@
 
   function hit() {
     if (!running) return;
+    window.WaitPlaySfx?.play('pickup');
     combo += 1;
     hits += 1;
     score = clampScore(score + 10 * comboMultiplier());
@@ -139,6 +140,7 @@
 
   function miss() {
     if (!running) return;
+    window.WaitPlaySfx?.play('bad');
     combo = 0;
     misses += 1;
     score = clampScore(score - MISS_PENALTY);

@@ -52,11 +52,13 @@
         if (!running || locked) return;
         locked = true;
         if (opt === q.answer) {
+          window.WaitPlaySfx?.play('good');
           b.classList.add('correct');
           score += 1;
           scoreEl.textContent = String(score);
           setTimeout(showQuestion, 250);
         } else {
+          window.WaitPlaySfx?.play('bad');
           b.classList.add('wrong');
           [...answersEl.children].find((c) => c.textContent === fmt(q.answer))?.classList.add('correct');
           setTimeout(showQuestion, 650);

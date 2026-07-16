@@ -129,6 +129,7 @@
   tapButton.addEventListener("click", () => {
     if (!running) return;
     score += 1;
+    window.WaitPlaySfx?.play("tap");
 
     // Keep the run going: on goal, start a fresh round score at 0.
     const goal = selectedGoal();
@@ -139,6 +140,7 @@
       score = 0;
       statusEl.textContent = `🔥 Level up! Cleared ${hitGoal}. Score reset. New goal: ${selectedGoal()}. Keep going!`;
       celebrateWin(hitGoal);
+      window.WaitPlaySfx?.play("levelup");
     }
 
     render();

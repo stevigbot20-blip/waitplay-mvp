@@ -44,6 +44,7 @@ window.WaitPlayArcade = (() => {
 
   function gameOver({ score, label, onReplay } = {}) {
     if (document.querySelector('.arcade-overlay')) return;
+    window.WaitPlaySfx?.play('win');
 
     const style = document.createElement('style');
     style.textContent = css;

@@ -87,6 +87,7 @@
     if (state.phase === 'waiting') {
       clearTimeout(state.timeoutId);
       state.phase = 'early';
+      window.WaitPlaySfx?.play('bad');
       gameArea.className = 'game-area early';
       message.textContent = 'Too eager! You scared the buyer off. Click "Start" to retry';
       startBtn.classList.remove('hidden');
@@ -96,6 +97,7 @@
 
   function showTarget() {
     state.phase = 'ready';
+    window.WaitPlaySfx?.play('go');
     gameArea.className = 'game-area ready';
     target.classList.remove('hidden');
     message.textContent = '';
@@ -108,6 +110,7 @@
     if (state.phase !== 'ready') return;
     
     const reactionTime = Math.round(performance.now() - state.startTime);
+    window.WaitPlaySfx?.play('good');
     state.phase = 'idle';
     target.classList.add('hidden');
     gameArea.className = 'game-area';

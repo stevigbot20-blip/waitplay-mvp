@@ -76,10 +76,11 @@
 
     const hitWall = head.x < 0 || head.y < 0 || head.x >= GRID || head.y >= GRID;
     const hitSelf = snake.some((s) => s.x === head.x && s.y === head.y);
-    if (hitWall || hitSelf) return endRound();
+    if (hitWall || hitSelf) { window.WaitPlaySfx?.play('bad'); return endRound(); }
 
     snake.unshift(head);
     if (head.x === key.x && head.y === key.y) {
+      window.WaitPlaySfx?.play('pickup');
       score += 1;
       scoreEl.textContent = String(score);
       placeKey();

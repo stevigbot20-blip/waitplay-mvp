@@ -18,7 +18,10 @@
 
   const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
+  const DOOR_TONES = [330, 415, 554, 660];
+
   async function flash(i, ms = 420) {
+    window.WaitPlaySfx?.tone(DOOR_TONES[i], Math.min(ms, 300), { type: 'triangle' });
     doors[i].classList.add('lit');
     await sleep(ms);
     doors[i].classList.remove('lit');
@@ -65,7 +68,7 @@
   async function handlePress(i) {
     if (!accepting) return;
     await flash(i, 200);
-    if (i !== sequence[inputIndex]) return endRound();
+    if (i !== sequence[inputIndex]) { window.WaitPlaySfx?.play('bad'); return endRound(); }
     inputIndex += 1;
     if (inputIndex >= sequence.length) {
       statusEl.textContent = '✅ Route complete!';
