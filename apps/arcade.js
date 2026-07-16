@@ -19,7 +19,7 @@ window.WaitPlayArcade = (() => {
     return Math.max(0, PLAYLIST.findIndex((g) => g.slug === (m ? m[1] : '')));
   };
   const nextGame = () => PLAYLIST[(currentIndex() + 1) % PLAYLIST.length];
-  const nextUrl = () => `../${nextGame().slug}/`;
+  const nextUrl = () => `../${nextGame().slug}/index.html`;
 
   const css = `
     .arcade-overlay { position: fixed; inset: 0; background: rgba(10, 14, 30, 0.88);
