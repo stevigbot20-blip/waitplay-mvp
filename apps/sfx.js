@@ -60,19 +60,28 @@ window.WaitPlaySfx = (() => {
     if (btn) btn.textContent = m ? '🔇' : '🔊';
   }
 
-  // Mute toggle button
+  // Mute toggle button — same style/placement as Roost Tycoon's: a round
+  // panel-colored pill pinned to the top-right of the game card.
   let btn = null;
   function addButton() {
     btn = document.createElement('button');
     btn.type = 'button';
     btn.textContent = muted ? '🔇' : '🔊';
     btn.setAttribute('aria-label', 'Toggle sound');
-    btn.style.cssText =
-      'position:fixed;top:10px;right:10px;z-index:9998;width:40px;height:40px;' +
-      'border-radius:50%;border:1px solid #2c3558;background:#151a2ecc;color:#eef1ff;' +
-      'font-size:1.05rem;cursor:pointer;backdrop-filter:blur(4px);';
-    btn.addEventListener('click', (e) => { e.stopPropagation(); setMuted(!muted); if (!muted) play('tap'); });
-    document.body.appendChild(btn);
+    const card = document.querySelector('.app');
+    const base =
+      'width:38px;height:38px;border-radius:999px;border:1px solid #2c3558;' +
+      'background:#1a1f34;color:#eef1ff;font-size:1.05rem;line-height:1;' +
+      'cursor:pointer;z-index:9998;';
+    if (card) {
+      if (!card.style.position) card.style.position = 'relative';
+      btn.style.cssText = base + 'position:absolute;top:14px;right:14px;';
+      card.appendChild(btn);
+    } else {
+      btn.style.cssText = base + 'position:fixed;top:10px;right:10px;';
+      document.body.appendChild(btn);
+    }
+    btn.addEventListener('click', (e) => { e.stopPropagation(); setMuted(!muted); if (!muted) { ensureCtx(); play('good'); } });
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', addButton);
   else addButton();
