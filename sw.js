@@ -1,4 +1,4 @@
-const CACHE_NAME = 'waitplay-v3';
+const CACHE_NAME = 'waitplay-v4';
 const OFFLINE_URL = '/offline.html';
 
 const ASSETS_TO_CACHE = [
@@ -12,6 +12,9 @@ const ASSETS_TO_CACHE = [
   '/apps/memory-match/',
   '/apps/reaction-test/',
   '/apps/snake/',
+  '/apps/simon-says/',
+  '/apps/number-rush/',
+  '/apps/color-match/',
   '/apps/arcade.js',
   '/apps/game-base.css',
   '/icons/icon-192.png',

@@ -45,7 +45,6 @@ const apps = [
     description: 'Watch the showing route, then repeat it door for door.',
     url: './apps/simon-says/',
     exists: true,
-    comingSoon: true
   },
   {
     id: 'number-rush',
@@ -53,7 +52,6 @@ const apps = [
     description: '30 seconds of quick commission math. Close every deal.',
     url: './apps/number-rush/',
     exists: true,
-    comingSoon: true
   },
   {
     id: 'color-match',
@@ -61,7 +59,6 @@ const apps = [
     description: 'One house doesn\'t match the listing photos. Spot it fast.',
     url: './apps/color-match/',
     exists: true,
-    comingSoon: true
   }
 ];
 

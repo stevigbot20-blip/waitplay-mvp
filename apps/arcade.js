@@ -8,10 +8,9 @@ window.WaitPlayArcade = (() => {
     { slug: 'memory-match', name: 'Listing Match', emoji: '🧠' },
     { slug: 'reaction-test', name: 'Offer Alert', emoji: '⚡' },
     { slug: 'snake', name: 'Key Collector', emoji: '🐍' },
-    // Built but not yet released — add here to put them in the rotation:
-    // { slug: 'simon-says', name: 'Showing Day', emoji: '🚪' },
-    // { slug: 'number-rush', name: 'Commission Rush', emoji: '💰' },
-    // { slug: 'color-match', name: 'House Hunt', emoji: '🔎' },
+    { slug: 'simon-says', name: 'Showing Day', emoji: '🚪' },
+    { slug: 'number-rush', name: 'Commission Rush', emoji: '💰' },
+    { slug: 'color-match', name: 'House Hunt', emoji: '🔎' },
   ];
   const AUTO_ADVANCE_SECONDS = 8;
 
