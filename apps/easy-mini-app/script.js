@@ -101,6 +101,13 @@
       saveBest();
     }
     render();
+
+    if (window.WaitPlayArcade) {
+      window.WaitPlayArcade.gameOver({
+        label: `${score} signs planted in ${selectedSeconds()}s (level ${level})`,
+        onReplay: startRound,
+      });
+    }
   };
 
   const startRound = () => {

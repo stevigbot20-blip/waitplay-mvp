@@ -85,11 +85,18 @@
 
     const total = hits + misses;
     const acc = total === 0 ? 0 : Math.round((hits / total) * 100);
-    showOverlay(
-      '⏰ Game Over!',
-      `Final score: <b>${score}</b><br>Hits: <b>${hits}</b> · Misses: <b>${misses}</b> · Accuracy: <b>${acc}%</b><br>Best score: <b>${bestScore}</b>`,
-      'Play Again'
-    );
+    if (window.WaitPlayArcade) {
+      window.WaitPlayArcade.gameOver({
+        label: `Score ${score} · ${acc}% accuracy (best ${bestScore})`,
+        onReplay: startGame,
+      });
+    } else {
+      showOverlay(
+        '⏰ Game Over!',
+        `Final score: <b>${score}</b><br>Hits: <b>${hits}</b> · Misses: <b>${misses}</b> · Accuracy: <b>${acc}%</b><br>Best score: <b>${bestScore}</b>`,
+        'Play Again'
+      );
+    }
   }
 
   function frame(now) {

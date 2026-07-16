@@ -1,4 +1,4 @@
-const CACHE_NAME = 'waitplay-v2';
+const CACHE_NAME = 'waitplay-v3';
 const OFFLINE_URL = '/offline.html';
 
 const ASSETS_TO_CACHE = [
@@ -11,6 +11,9 @@ const ASSETS_TO_CACHE = [
   '/apps/better-mini-game/',
   '/apps/memory-match/',
   '/apps/reaction-test/',
+  '/apps/snake/',
+  '/apps/arcade.js',
+  '/apps/game-base.css',
   '/icons/icon-192.png',
   '/icons/icon-512.png'
 ];

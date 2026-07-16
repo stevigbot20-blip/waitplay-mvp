@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Key Collector</title>
+  <link rel="stylesheet" href="../game-base.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app" aria-live="polite">
+    <a class="back-link" href="../../index.html">← Back to WaitPlay</a>
+    <h1>🐍 Key Collector</h1>
+    <p class="sub">Grab every key 🔑 to unlock the listing. Don't hit the fence!</p>
+
+    <div class="hud">
+      <div class="stat"><span>Keys</span><strong id="score">0</strong></div>
+      <div class="stat"><span>Best</span><strong id="best">0</strong></div>
+      <div class="stat"><span>Speed</span><strong id="speed">1x</strong></div>
+    </div>
+
+    <canvas id="board" width="360" height="360" aria-label="Snake board"></canvas>
+
+    <div class="dpad" aria-label="Direction controls">
+      <button class="dpad-btn up" data-dir="up" type="button" aria-label="Up">▲</button>
+      <div class="dpad-mid">
+        <button class="dpad-btn" data-dir="left" type="button" aria-label="Left">◀</button>
+        <button class="dpad-btn" data-dir="down" type="button" aria-label="Down">▼</button>
+        <button class="dpad-btn" data-dir="right" type="button" aria-label="Right">▶</button>
+      </div>
+    </div>
+
+    <button id="startBtn" class="btn primary" type="button">Start</button>
+    <p id="status" class="status">Arrow keys, swipe, or buttons to steer.</p>
+  </main>
+
+  <script src="../arcade.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,12 +1,12 @@
 :root {
-  color-scheme: light dark;
-  --bg: #f5f7ff;
-  --card: #ffffff;
-  --text: #20253a;
-  --muted: #5a627a;
-  --accent: #4a6cff;
-  --accent-press: #3650c7;
-  --reset: #eef1ff;
+  color-scheme: dark;
+  --bg: #0f1220;
+  --card: #1a1f34;
+  --text: #f2f4ff;
+  --muted: #c3c9e7;
+  --accent: #6f88ff;
+  --accent-press: #5670e8;
+  --reset: #2a3153;
 }
 
 @media (prefers-color-scheme: dark) {

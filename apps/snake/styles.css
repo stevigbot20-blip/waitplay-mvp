@@ -1,0 +1,18 @@
+#board {
+  width: 100%;
+  max-width: 360px;
+  aspect-ratio: 1;
+  height: auto;
+  background: #10162b;
+  border: 2px solid #2c3558;
+  border-radius: 12px;
+  touch-action: none;
+}
+.dpad { margin-top: 12px; user-select: none; }
+.dpad-mid { display: flex; justify-content: center; gap: 8px; margin-top: 8px; }
+.dpad-btn {
+  width: 56px; height: 44px; border-radius: 10px; border: 1px solid #2c3558;
+  background: #1b2340; color: #dfe6ff; font-size: 1rem; cursor: pointer;
+}
+.dpad-btn:active { background: #4a6cff; }
+@media (min-width: 700px) { .dpad { display: none; } }

@@ -1,0 +1,40 @@
+/* Shared base for WaitPlay mini games (dark theme matching arcade overlay) */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background: radial-gradient(circle at 20% 0%, #1b2340 0%, #0f1424 55%);
+  color: #eef1ff;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  padding: 24px 14px 48px;
+}
+.app { width: 100%; max-width: 460px; text-align: center; }
+.back-link {
+  display: inline-block; margin-bottom: 14px; color: #8fa0d0;
+  text-decoration: none; font-size: 0.9rem;
+}
+.back-link:hover { color: #c9d3f5; }
+h1 { margin: 0 0 4px; font-size: 1.8rem; }
+.sub { margin: 0 0 18px; color: #9fb0e8; font-size: 0.95rem; }
+.hud {
+  display: flex; gap: 10px; justify-content: center; margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+.hud .stat {
+  background: #151a2e; border: 1px solid #2c3558; border-radius: 10px;
+  padding: 8px 14px; min-width: 74px;
+}
+.hud .stat span { display: block; font-size: 0.72rem; color: #8fa0d0; text-transform: uppercase; letter-spacing: 0.06em; }
+.hud .stat strong { font-size: 1.15rem; }
+.btn {
+  display: inline-block; padding: 12px 22px; border-radius: 10px; border: none;
+  font-size: 1rem; font-weight: 600; cursor: pointer; font-family: inherit;
+  margin: 6px 4px 0;
+}
+.btn.primary { background: #4a6cff; color: #fff; }
+.btn.primary:disabled { background: #2c3558; color: #8fa0d0; cursor: default; }
+.btn.ghost { background: #232b4a; color: #dfe6ff; }
+.status { min-height: 1.4em; color: #c9d3f5; margin: 12px 0 0; }

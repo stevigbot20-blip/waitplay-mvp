@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Whack-a-Dot</title>
+  <title>Whack-a-Lead</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <main class="app" aria-live="polite">
     <a href="../../index.html" class="back-link">← Back to WaitPlay</a>
     <header class="topbar">
-      <h1>🎯 Whack-a-Dot</h1>
+      <h1>🎯 Whack-a-Lead</h1>
       <p class="subtitle">Hit the moving dot before time runs out!</p>
     </header>
 
@@ -22,7 +22,7 @@
     </section>
 
     <section id="arena" class="arena" tabindex="0" aria-label="Game arena. Click or tap the dot. Press Space to whack when dot is near center.">
-      <button id="dot" class="dot" aria-label="Target dot"></button>
+      <button id="dot" class="dot" aria-label="Hot lead">🏠</button>
       <div id="overlay" class="overlay show">
         <div class="card">
           <h2 id="overlayTitle">Ready?</h2>
@@ -39,6 +39,7 @@
     </footer>
   </main>
 
+  <script src="../arcade.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

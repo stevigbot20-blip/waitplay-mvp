@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>House Hunt</title>
+  <link rel="stylesheet" href="../game-base.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app" aria-live="polite">
+    <a class="back-link" href="../../index.html">← Back to WaitPlay</a>
+    <h1>🔎 House Hunt</h1>
+    <p class="sub">One house doesn't match the listing photos. Find it — fast!</p>
+
+    <div class="hud">
+      <div class="stat"><span>Found</span><strong id="score">0</strong></div>
+      <div class="stat"><span>Best</span><strong id="best">0</strong></div>
+      <div class="stat"><span>Time</span><strong id="time">30</strong></div>
+    </div>
+
+    <div id="grid" class="hunt-grid" aria-label="House grid"></div>
+
+    <button id="startBtn" class="btn primary" type="button">Start</button>
+    <p id="status" class="status"></p>
+  </main>
+
+  <script src="../arcade.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

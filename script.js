@@ -6,31 +6,62 @@ const track = (eventName, payload = {}) => {
 const apps = [
   {
     id: 'easy-mini-app',
-    title: 'Tap Sprint',
-    description: 'Tap as fast as you can before time runs out!',
+    title: '🪧 Sign Sprint',
+    description: 'Plant as many yard signs as you can before time runs out!',
     url: './apps/easy-mini-app/',
-    exists: Boolean(window.WAITPLAY_APP_FLAGS?.easyMiniAppExists)
+    exists: true
   },
   {
     id: 'better-mini-game',
-    title: 'Whack-a-Dot',
-    description: 'Hit moving dots to score points. Build combos for multipliers!',
+    title: '🎯 Whack-a-Lead',
+    description: 'Tap the hot leads before they bounce. Build combos for multipliers!',
     url: './apps/better-mini-game/',
-    exists: Boolean(window.WAITPLAY_APP_FLAGS?.betterMiniGameExists)
+    exists: true
   },
   {
     id: 'memory-match',
-    title: '🧠 Memory Match',
-    description: 'Find all matching pairs in the fewest moves.',
+    title: '🧠 Listing Match',
+    description: 'Match every house with its buyer in the fewest moves.',
     url: './apps/memory-match/',
     exists: true
   },
   {
     id: 'reaction-test',
-    title: '⚡ Reaction Test',
-    description: 'Test your reflexes. How fast can you react?',
+    title: '⚡ Offer Alert',
+    description: 'An offer just dropped — accept it before it\'s gone. Best of 5!',
     url: './apps/reaction-test/',
     exists: true
+  },
+  {
+    id: 'snake',
+    title: '🐍 Key Collector',
+    description: 'Steer the agent, grab every key, don\'t hit the fence!',
+    url: './apps/snake/',
+    exists: true
+  },
+  {
+    id: 'simon-says',
+    title: '🚪 Showing Day',
+    description: 'Watch the showing route, then repeat it door for door.',
+    url: './apps/simon-says/',
+    exists: true,
+    comingSoon: true
+  },
+  {
+    id: 'number-rush',
+    title: '💰 Commission Rush',
+    description: '30 seconds of quick commission math. Close every deal.',
+    url: './apps/number-rush/',
+    exists: true,
+    comingSoon: true
+  },
+  {
+    id: 'color-match',
+    title: '🔎 House Hunt',
+    description: 'One house doesn\'t match the listing photos. Spot it fast.',
+    url: './apps/color-match/',
+    exists: true,
+    comingSoon: true
   }
 ];
 
@@ -40,12 +71,12 @@ function renderApps() {
 
   grid.innerHTML = apps.map(app => `
     <article class="app-card">
-      <span class="badge ${app.exists ? 'ok' : 'muted'}">${app.exists ? 'Available' : 'Not found locally'}</span>
+      <span class="badge ${app.comingSoon ? 'muted' : 'ok'}">${app.comingSoon ? 'Coming soon' : 'Available'}</span>
       <h3>${app.title}</h3>
       <p>${app.description}</p>
-      ${app.exists
-        ? `<a class="btn" href="${app.url}" data-track="open_app_${app.id}">Open app</a>`
-        : `<button class="btn" disabled>Missing app</button>`}
+      ${app.comingSoon
+        ? `<button class="btn" disabled>Coming soon</button>`
+        : `<a class="btn" href="${app.url}" data-track="open_app_${app.id}">Open app</a>`}
     </article>
   `).join('');
 }

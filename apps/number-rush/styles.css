@@ -1,0 +1,17 @@
+.question-card {
+  background: #151a2e;
+  border: 1px solid #2c3558;
+  border-radius: 14px;
+  padding: 18px;
+  min-height: 200px;
+}
+.question { font-size: 1.15rem; margin: 4px 0 16px; min-height: 3em; }
+.answers { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+.answers button {
+  padding: 14px 8px; border-radius: 10px; border: 1px solid #2c3558;
+  background: #1b2340; color: #eef1ff; font-size: 1.05rem; font-weight: 600;
+  cursor: pointer; font-family: inherit;
+}
+.answers button:hover { background: #232b4a; }
+.answers button.correct { background: #14532d; border-color: #4ade80; }
+.answers button.wrong { background: #7f1d1d; border-color: #f87171; }

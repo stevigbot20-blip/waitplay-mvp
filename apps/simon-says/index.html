@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Showing Day</title>
+  <link rel="stylesheet" href="../game-base.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app" aria-live="polite">
+    <a class="back-link" href="../../index.html">← Back to WaitPlay</a>
+    <h1>🚪 Showing Day</h1>
+    <p class="sub">Watch the showing route, then repeat it door for door.</p>
+
+    <div class="hud">
+      <div class="stat"><span>Streak</span><strong id="streak">0</strong></div>
+      <div class="stat"><span>Best</span><strong id="best">0</strong></div>
+    </div>
+
+    <div class="doors" id="doors">
+      <button class="door d0" data-i="0" type="button" aria-label="Blue door">🏠</button>
+      <button class="door d1" data-i="1" type="button" aria-label="Green door">🏡</button>
+      <button class="door d2" data-i="2" type="button" aria-label="Orange door">🏢</button>
+      <button class="door d3" data-i="3" type="button" aria-label="Pink door">🏘️</button>
+    </div>
+
+    <button id="startBtn" class="btn primary" type="button">Start showing</button>
+    <p id="status" class="status">Press Start to see the route.</p>
+  </main>
+
+  <script src="../arcade.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

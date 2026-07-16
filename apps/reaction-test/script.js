@@ -2,12 +2,15 @@
 (function() {
   const STORAGE_KEY = 'reaction_test_stats';
   
+  const ROUND_ATTEMPTS = 5;
+
   let state = {
     phase: 'idle', // idle, waiting, ready, early
     startTime: 0,
     timeoutId: null,
     times: [],
-    bestTime: Infinity
+    bestTime: Infinity,
+    roundTimes: []
   };
 
   const gameArea = document.getElementById('gameArea');
@@ -65,7 +68,7 @@
     state.phase = 'waiting';
     gameArea.className = 'game-area waiting';
     target.classList.add('hidden');
-    message.textContent = 'Wait for green...';
+    message.textContent = 'Buyer is thinking… wait for it';
     startBtn.classList.add('hidden');
     
     gameArea.onclick = handleEarlyClick;
@@ -85,7 +88,7 @@
       clearTimeout(state.timeoutId);
       state.phase = 'early';
       gameArea.className = 'game-area early';
-      message.textContent = 'Too early! Click "Start" to try again';
+      message.textContent = 'Too eager! You scared the buyer off. Click "Start" to retry';
       startBtn.classList.remove('hidden');
       gameArea.onclick = null;
     }
@@ -112,15 +115,33 @@
     target.onclick = null;
     
     state.times.push(reactionTime);
+    state.roundTimes.push(reactionTime);
     if (reactionTime < state.bestTime) {
       state.bestTime = reactionTime;
     }
-    
-    message.innerHTML = `<strong>${reactionTime}ms</strong><br><small>Click "Start" to play again</small>`;
-    startBtn.classList.remove('hidden');
-    
+
     saveStats();
     updateDisplay();
+
+    if (state.roundTimes.length >= ROUND_ATTEMPTS) {
+      const round = state.roundTimes;
+      state.roundTimes = [];
+      const bestRound = Math.min.apply(null, round);
+      const avgRound = Math.round(round.reduce((a, b) => a + b, 0) / round.length);
+      startBtn.classList.remove('hidden');
+      message.innerHTML = `<strong>${reactionTime}ms</strong>`;
+      if (window.WaitPlayArcade) {
+        window.WaitPlayArcade.gameOver({
+          label: `${ROUND_ATTEMPTS} offers accepted · best ${bestRound}ms · avg ${avgRound}ms`,
+          onReplay: startGame,
+        });
+        return;
+      }
+    }
+
+    const left = ROUND_ATTEMPTS - state.roundTimes.length;
+    message.innerHTML = `<strong>${reactionTime}ms</strong><br><small>${left} offer${left === 1 ? '' : 's'} left this round — click "Start"</small>`;
+    startBtn.classList.remove('hidden');
   }
 
   function resetStats() {

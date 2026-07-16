@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Reaction Test</title>
+  <title>Offer Alert — Reaction Test</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <main class="app" aria-live="polite">
     <a class="back-link" href="../../index.html">← Back to WaitPlay</a>
-    <h1>⚡ Reaction Test</h1>
-    <p class="sub">How fast can you react?</p>
+    <h1>⚡ Offer Alert</h1>
+    <p class="sub">An offer just came in — accept it before it's gone! Best of 5.</p>
 
     <section class="stats">
       <div class="stat-box">
@@ -33,9 +33,9 @@
 
     <div id="gameArea" class="game-area">
       <div id="target" class="target hidden">
-        <span>CLICK!</span>
+        <span>🏠 ACCEPT OFFER!</span>
       </div>
-      <p id="message" class="message">Click "Start" when you're ready</p>
+      <p id="message" class="message">Click "Start" — accept the offer the moment it appears</p>
     </div>
 
     <div class="history">
@@ -47,6 +47,7 @@
     <button id="resetBtn" class="btn ghost">Reset Stats</button>
   </main>
 
+  <script src="../arcade.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

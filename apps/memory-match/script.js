@@ -1,6 +1,6 @@
 // Memory Match Game
 (function() {
-  const EMOJIS = ['🎮', '🎯', '🎪', '🎨', '🎭', '🎪', '🎯', '🎮', '🎲', '🎳', '🎵', '🎹', '🎸', '🎼', '🎰', '🕹️'];
+  const EMOJIS = ['🏠', '🔑', '📋', '💰', '🛋️', '🚪', '🛁', '🌳', '📞', '🖊️', '📸', '🧑‍💼', '🏦', '📦', '🧱', '🪟'];
   
   let cards = [];
   let flippedCards = [];
@@ -129,7 +129,14 @@
     
     finalMovesEl.textContent = moves;
     finalTimeEl.textContent = formatTime(timer);
-    winOverlay.classList.remove('hidden');
+    if (window.WaitPlayArcade) {
+      window.WaitPlayArcade.gameOver({
+        label: `All pairs in ${moves} moves · ${formatTime(timer)}`,
+        onReplay: initGame,
+      });
+    } else {
+      winOverlay.classList.remove('hidden');
+    }
   }
 
   function initGame() {

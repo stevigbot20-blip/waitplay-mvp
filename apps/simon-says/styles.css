@@ -1,0 +1,23 @@
+.doors {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  max-width: 320px;
+  margin: 0 auto;
+}
+.door {
+  aspect-ratio: 1;
+  border-radius: 16px;
+  border: 2px solid transparent;
+  font-size: 3rem;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: transform 0.08s ease, opacity 0.08s ease, box-shadow 0.08s ease;
+}
+.door:active { transform: scale(0.96); }
+.door.lit { opacity: 1; transform: scale(1.05); box-shadow: 0 0 26px currentColor; }
+.door:disabled { cursor: default; }
+.d0 { background: #1d3a8f; color: #6f8dff; }
+.d1 { background: #14532d; color: #4ade80; }
+.d2 { background: #7c2d12; color: #fb923c; }
+.d3 { background: #831843; color: #f472b6; }

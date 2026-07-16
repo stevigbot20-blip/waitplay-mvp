@@ -1,0 +1,18 @@
+.hunt-grid {
+  display: grid;
+  gap: 8px;
+  max-width: 360px;
+  margin: 0 auto;
+  min-height: 220px;
+}
+.hunt-grid button {
+  aspect-ratio: 1;
+  border-radius: 12px;
+  border: 1px solid #2c3558;
+  background: #1b2340;
+  font-size: 1.6rem;
+  cursor: pointer;
+  transition: transform 0.06s ease;
+}
+.hunt-grid button:active { transform: scale(0.94); }
+.hunt-grid button.wrong { background: #7f1d1d; }
